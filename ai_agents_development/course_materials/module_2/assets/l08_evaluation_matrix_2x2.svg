@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="l08Title l08Desc">
+  <title id="l08Title">L08: Матрица 2×2 оценки промптов, правило одного фактора и три признака рубрики</title>
+  <desc id="l08Desc">Схема показывает дизайн эксперимента 2 на 2 (OpenCode A, OpenCode B, Codex A, Codex B), где между A и B добавляется ровно одна строка инструкции, а каждый из четырёх ответов проверяется по полноте, корректности и проверяемости со статусами да, нет или нет данных.</desc>
+
+  <rect width="1200" height="760" fill="#f8fafc"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="44" font-size="26" font-weight="700" fill="#0f172a">L08. Оценка промптов: матрица 2 × 2 и доказательный выбор</text>
+    <text x="40" y="72" font-size="15" fill="#475569">Учебная схема. Объясняет, как отделить эффект изменения промпта (A против B) от различий между средами.</text>
+
+    <!-- Top block: Controlled Constants vs Single Variable -->
+    <rect x="40" y="96" width="540" height="150" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="60" y="126" font-size="16" font-weight="700" fill="#0369a1">Что удерживается постоянным во всех 4 попытках:</text>
+    <text x="60" y="152" font-size="14" fill="#0f172a">• Один стартовый снимок (brief.md, режим только для чтения)</text>
+    <text x="60" y="176" font-size="14" fill="#0f172a">• Свежий сеанс и отдельная копия для каждой из 4 попыток</text>
+    <text x="60" y="200" font-size="14" fill="#0f172a">• Одинаковый лимит времени (8 мин на попытку) и рубрика</text>
+    <text x="60" y="224" font-size="14" fill="#0f172a">• Заранее зафиксированный порядок запуска (до старта)</text>
+
+    <rect x="610" y="96" width="550" height="150" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="630" y="126" font-size="16" font-weight="700" fill="#5b21b6">Единственный изменяемый фактор внутри среды (A → B):</text>
+    <text x="630" y="154" font-family="Menlo, Consolas, monospace" font-size="13" fill="#1e293b">Промпт A: По brief.md напишите один ученический</text>
+    <text x="630" y="174" font-family="Menlo, Consolas, monospace" font-size="13" fill="#1e293b">фрагмент до 200 слов. Включите цель, код и действие...</text>
+    <rect x="630" y="188" width="510" height="44" rx="6" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="642" y="206" font-family="Menlo, Consolas, monospace" font-size="12" font-weight="700" fill="#14532d">+ в Промпте B ровно 1 строка:</text>
+    <text x="642" y="224" font-family="Menlo, Consolas, monospace" font-size="12" fill="#166534">«Добавьте шаг, в котором ученик сверяет предсказанный вывод с фактическим.»</text>
+
+    <!-- Middle block: 2x2 Matrix -->
+    <rect x="40" y="268" width="1120" height="270" rx="12" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="60" y="300" font-size="18" font-weight="700" fill="#0f172a">Матрица 2 × 2: сначала сравниваем A и B внутри среды, затем сопоставляем среды</text>
+
+    <!-- Grid Header -->
+    <rect x="260" y="320" width="420" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="470" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Вариант запроса A (базовый)</text>
+
+    <rect x="700" y="320" width="430" height="40" rx="6" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="915" y="345" text-anchor="middle" font-size="15" font-weight="700" fill="#1e293b">Вариант запроса B (+ явная инструкция о сверке)</text>
+
+    <!-- Row 1: OpenCode -->
+    <rect x="60" y="372" width="185" height="70" rx="6" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="152" y="403" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">Среда 1: OpenCode</text>
+    <text x="152" y="425" text-anchor="middle" font-size="12" fill="#0c4a6e">модель/настройки X</text>
+
+    <rect x="260" y="372" width="420" height="70" rx="6" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="278" y="397" font-size="14" font-weight="700" fill="#0f172a">Попытка OC-A (свежий сеанс 1)</text>
+    <text x="278" y="420" font-size="13" fill="#334155">Полнота | Корректность | Проверяемость + строки-свидетельства</text>
+
+    <rect x="700" y="372" width="430" height="70" rx="6" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="718" y="397" font-size="14" font-weight="700" fill="#0f172a">Попытка OC-B (свежий сеанс 2)</text>
+    <text x="718" y="420" font-size="13" fill="#334155">Эффект B в OpenCode = сравнение OC-B с OC-A при тех же настройках</text>
+
+    <!-- Row 2: Codex -->
+    <rect x="60" y="454" width="185" height="70" rx="6" fill="#fef3c7" stroke="#d97706"/>
+    <text x="152" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#b45309">Среда 2: Codex</text>
+    <text x="152" y="507" text-anchor="middle" font-size="12" fill="#92400e">модель/настройки Y</text>
+
+    <rect x="260" y="454" width="420" height="70" rx="6" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="278" y="479" font-size="14" font-weight="700" fill="#0f172a">Попытка CX-A (свежий сеанс 3)</text>
+    <text x="278" y="502" font-size="13" fill="#334155">Полнота | Корректность | Проверяемость + строки-свидетельства</text>
+
+    <rect x="700" y="454" width="430" height="70" rx="6" fill="#f8fafc" stroke="#94a3b8"/>
+    <text x="718" y="479" font-size="14" font-weight="700" fill="#0f172a">Попытка CX-B (свежий сеанс 4)</text>
+    <text x="718" y="502" font-size="13" fill="#334155">Эффект B в Codex = сравнение CX-B с CX-A при тех же настройках</text>
+
+    <!-- Bottom block: Three Rubric Axes & Statuses -->
+    <rect x="40" y="558" width="1120" height="168" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="60" y="588" font-size="17" font-weight="700" fill="#14532d">Три обязательных признака рубрики L08 и правила записи в ячейку:</text>
+
+    <text x="60" y="618" font-size="14" font-weight="700" fill="#166534">1. Полнота:</text>
+    <text x="155" y="618" font-size="14" fill="#1e293b">есть все 4 элемента: цель, код, действие ученика и шаг сверки.</text>
+
+    <text x="60" y="644" font-size="14" font-weight="700" fill="#166534">2. Корректность:</text>
+    <text x="190" y="644" font-size="14" fill="#1e293b">второе присваивание выполняется ДО print; значения и вывод соответствуют брифу.</text>
+
+    <text x="60" y="670" font-size="14" font-weight="700" fill="#166534">3. Проверяемость:</text>
+    <text x="200" y="670" font-size="14" fill="#1e293b">назван точный ожидаемый вывод и конкретный способ сверки (предсказание vs запуск).</text>
+
+    <text x="60" y="704" font-size="13" font-weight="700" fill="#0f172a">Допустимые статусы в матрице: «да» (со ссылкой на строку), «нет» (с указанием дефекта), «нет данных» (при тайм-ауте/сбое до ручной правки).</text>
+  </g>
+</svg>

@@ -1,0 +1,3162 @@
+specification: SPEC-CORE-PY-001
+python_version: '3.14'
+status: полная предложенная структура S01–S07; ожидает утверждения и оценки плановых минут
+stages:
+- id: S01
+  title: 'Beginner: основы программирования'
+  status: предварительный
+  modules:
+  - id: S01-M01
+    title: Программа и среда
+    topics:
+    - id: S01-M01-T001
+      title: Программы и исполнение
+      subtopics:
+      - id: S01-M01-T001-P01
+        title: Что делает программа
+        concepts:
+        - команда
+        - данные
+        - алгоритм
+        - последовательность шагов
+        - результат
+        learning_outcomes:
+        - Описывать алгоритм словами и отличать входные данные от результата
+        depth: базовая
+        interview_priority: средний
+        prerequisites: []
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Смешение текста программы и результата исполнения
+        mandatory_revisit:
+          target_concept: функции и разбор решения
+          target_id: S03-M12
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M01-T001-P02
+        title: Python и интерпретатор
+        concepts:
+        - язык Python
+        - реализация CPython
+        - версия 3.14
+        - интерактивный режим
+        - файл программы
+        learning_outcomes:
+        - Различать язык и реализацию, выбирать режим запуска и фиксировать версию
+        depth: базовая
+        interview_priority: средний
+        prerequisites: []
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Результат одного запуска принимается за гарантию языка
+        mandatory_revisit:
+          target_concept: механизмы CPython
+          target_id: S06-M23
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M01-T002
+      title: Запуск и обратная связь
+      subtopics:
+      - id: S01-M01-T002-P01
+        title: Рабочая среда
+        concepts:
+        - терминал
+        - текущий каталог
+        - файл .py
+        - команда запуска
+        - стандартный вывод
+        learning_outcomes:
+        - Создавать и запускать файл, определять каталог и видеть результат
+        depth: применение
+        interview_priority: низкий
+        prerequisites:
+        - S01-M01-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Команда терминала смешивается с кодом Python
+        mandatory_revisit:
+          target_concept: организация проекта
+          target_id: S04-M16
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M01-T002-P02
+        title: Ошибки и диагностика
+        concepts:
+        - синтаксическая ошибка
+        - ошибка выполнения
+        - traceback
+        - строка и место ошибки
+        learning_outcomes:
+        - Находить место сбоя и различать основные классы ошибок без изучения иерархии исключений
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M01-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Последняя строка traceback игнорируется
+        mandatory_revisit:
+          target_concept: исключения и работа с файлами
+          target_id: S04-M15
+          status: обязательно; тематические повторения уточняются
+  - id: S01-M02
+    title: Значения и выражения
+    topics:
+    - id: S01-M02-T003
+      title: Синтаксис и имена
+      subtopics:
+      - id: S01-M02-T003-P01
+        title: Исходный текст
+        concepts:
+        - инструкция
+        - выражение
+        - строка
+        - отступ
+        - комментарий
+        - регистр символов
+        learning_outcomes:
+        - Распознавать основные элементы записи и корректно оформлять простой код
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S01-M01-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Отступ считается только оформлением
+        mandatory_revisit:
+          target_concept: функции и разбор решения
+          target_id: S03-M12
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M02-T003-P02
+        title: Имена и присваивание
+        concepts:
+        - идентификатор
+        - ключевое слово
+        - оператор =
+        - связывание имени
+        - повторное присваивание
+        learning_outcomes:
+        - Выбирать допустимые имена и отслеживать текущие значения имён
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M02-T003-P01
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Присваивание считают математическим равенством
+        mandatory_revisit:
+          target_concept: объекты и ссылки
+          target_id: S02-M05
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M02-T004
+      title: Числа и вычисления
+      subtopics:
+      - id: S01-M02-T004-P01
+        title: Целые и вещественные числа
+        concepts:
+        - int
+        - float
+        - литерал
+        - знак
+        - преобразование типов
+        - пределы точности float
+        learning_outcomes:
+        - Различать числовые типы и выбирать допустимое преобразование
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M02-T003-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Десятичная запись float всегда точна
+        mandatory_revisit:
+          target_concept: числа и стандартная библиотека
+          target_id: S06-M22
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M02-T004-P02
+        title: Операторы и порядок
+        concepts:
+        - +
+        - '-'
+        - '*'
+        - /
+        - //
+        - '%'
+        - '**'
+        - скобки
+        - приоритет
+        - деление на ноль
+        learning_outcomes:
+        - Вычислять результат выражения и объяснять порядок операций
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M02-T004-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Округление деления // принимается за усечение к нулю
+        mandatory_revisit:
+          target_concept: числа и стандартная библиотека
+          target_id: S06-M22
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M02-T005
+      title: Строки и ввод-вывод
+      subtopics:
+      - id: S01-M02-T005-P01
+        title: Строковые значения
+        concepts:
+        - str
+        - литерал
+        - кавычки
+        - экранирование
+        - конкатенация
+        - длина
+        - неизменяемость на уровне наблюдений
+        learning_outcomes:
+        - Создавать строки и выполнять базовые операции
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S01-M02-T003-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Смешение числа и его строкового представления
+        mandatory_revisit:
+          target_concept: строки и последовательности
+          target_id: S02-M06
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M02-T005-P02
+        title: Ввод и форматированный вывод
+        concepts:
+        - input
+        - print
+        - преобразование ввода
+        - f-строка
+        - разделители и завершение вывода
+        learning_outcomes:
+        - Получать вход, преобразовывать его и выводить понятный результат
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S01-M02-T004-P01
+        - S01-M02-T005-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - input возвращает число автоматически
+        mandatory_revisit:
+          target_concept: исключения и работа с файлами
+          target_id: S04-M15
+          status: обязательно; тематические повторения уточняются
+  - id: S01-M03
+    title: Условия и циклы
+    topics:
+    - id: S01-M03-T006
+      title: Логические выражения
+      subtopics:
+      - id: S01-M03-T006-P01
+        title: Сравнения
+        concepts:
+        - bool
+        - 'True'
+        - 'False'
+        - ==
+        - '!='
+        - <
+        - <=
+        - '>'
+        - '>='
+        - цепочки сравнений
+        learning_outcomes:
+        - Сравнивать значения и объяснять результат и цепочки сравнений
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M02-T004-P02
+        - S01-M02-T005-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Оператор = путают с ==
+        mandatory_revisit:
+          target_concept: объекты и ссылки
+          target_id: S02-M05
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M03-T006-P02
+        title: Логические операции
+        concepts:
+        - and
+        - or
+        - not
+        - приоритет
+        - истинность
+        - короткое замыкание
+        learning_outcomes:
+        - Составлять и пошагово вычислять логические условия
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T006-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - and и or всегда возвращают bool
+        mandatory_revisit:
+          target_concept: объекты и ссылки
+          target_id: S02-M05
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M03-T007
+      title: Ветвление
+      subtopics:
+      - id: S01-M03-T007-P01
+        title: Условная инструкция
+        concepts:
+        - if
+        - elif
+        - else
+        - блок
+        - вложенность
+        - порядок ветвей
+        learning_outcomes:
+        - Реализовывать выбор и прослеживать исполнение ветвей
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M02-T003-P01
+        - S01-M03-T006-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Несколько независимых if считают эквивалентом цепочки elif
+        mandatory_revisit:
+          target_concept: объектно-ориентированное программирование
+          target_id: S05-M18
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M03-T007-P02
+        title: Пограничные условия
+        concepts:
+        - диапазон
+        - включительная и исключительная граница
+        - порядок проверок
+        - пустой ввод
+        learning_outcomes:
+        - Выбирать проверки границ и находить пропущенные случаи
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T007-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Границу проверяют только с одной стороны
+        mandatory_revisit:
+          target_concept: тестирование и анализ решений
+          target_id: S07-M24
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M03-T008
+      title: Повторение действий
+      subtopics:
+      - id: S01-M03-T008-P01
+        title: Цикл while
+        concepts:
+        - условие продолжения
+        - тело
+        - изменение состояния
+        - завершение
+        - бесконечный цикл
+        learning_outcomes:
+        - Строить завершающийся цикл и прослеживать его состояние
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T007-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Условие или состояние цикла не меняется
+        mandatory_revisit:
+          target_concept: тестирование и анализ решений
+          target_id: S07-M24
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M03-T008-P02
+        title: Цикл for и range
+        concepts:
+        - for
+        - последовательность значений
+        - range
+        - старт
+        - шаг
+        - исключённая верхняя граница
+        learning_outcomes:
+        - Применять range и предсказывать число итераций без объяснения протокола итераторов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T008-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Верхняя граница range включена
+        mandatory_revisit:
+          target_concept: итерация и протоколы
+          target_id: S06-M20
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M03-T008-P03
+        title: Управление циклом
+        concepts:
+        - break
+        - continue
+        - вложенные циклы
+        - область действия команд
+        learning_outcomes:
+        - Управлять проходами и объяснять выход из вложенных циклов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T008-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - break завершает все вложенные циклы
+        mandatory_revisit:
+          target_concept: итерация и протоколы
+          target_id: S06-M20
+          status: обязательно; тематические повторения уточняются
+  - id: S01-M04
+    title: Функции и базовый разбор задач
+    topics:
+    - id: S01-M04-T009
+      title: Создание функций
+      subtopics:
+      - id: S01-M04-T009-P01
+        title: Вызов и параметры
+        concepts:
+        - def
+        - имя функции
+        - параметр
+        - аргумент
+        - вызов
+        - тело функции
+        learning_outcomes:
+        - Выделять повторяющиеся действия в функцию и отслеживать аргументы
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T008-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Определение функции принимают за её вызов
+        mandatory_revisit:
+          target_concept: функции и области видимости
+          target_id: S03-M13
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M04-T009-P02
+        title: Возврат результата
+        concepts:
+        - return
+        - завершение функции
+        - неявный None
+        - различие вывода и возврата
+        learning_outcomes:
+        - Проектировать простые функции и использовать возвращаемое значение
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T009-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - print считают возвратом результата
+        mandatory_revisit:
+          target_concept: функции и области видимости
+          target_id: S03-M13
+          status: обязательно; тематические повторения уточняются
+    - id: S01-M04-T010
+      title: Состояние и разбор решения
+      subtopics:
+      - id: S01-M04-T010-P01
+        title: Локальные имена
+        concepts:
+        - локальное имя
+        - параметр как имя
+        - время жизни вызова
+        - доступ к имени
+        learning_outcomes:
+        - Прослеживать локальные имена в отдельных вызовах без полной модели областей видимости
+        depth: базовая
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T009-P02
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Параметры двух вызовов считают одним общим состоянием
+        mandatory_revisit:
+          target_concept: функции и области видимости
+          target_id: S03-M13
+          status: обязательно; тематические повторения уточняются
+      - id: S01-M04-T010-P02
+        title: Проверка решения
+        concepts:
+        - условие
+        - вход и выход
+        - предположение
+        - пример
+        - граница
+        - проверка результата
+        - ошибка
+        learning_outcomes:
+        - Формулировать вход и результат, подбирать проверки и объяснять найденное несоответствие
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M03-T007-P02
+        - S01-M04-T009-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Один успешно пройденный пример доказывает корректность
+        mandatory_revisit:
+          target_concept: тестирование и анализ решений
+          target_id: S07-M24
+          status: обязательно; тематические повторения уточняются
+- id: S02
+  title: 'Foundation: объекты, строки и коллекции'
+  status: черновик
+  modules:
+  - id: S02-M05
+    title: Объекты и оценка сложности
+    topics:
+    - id: S02-M05-T001
+      title: Объектная модель
+      subtopics:
+      - id: S02-M05-T001-P01
+        title: Объекты и имена
+        concepts:
+        - объект
+        - значение
+        - тип
+        - идентичность
+        - имя
+        - связывание
+        - type()
+        - id()
+        learning_outcomes:
+        - Строить схему имён и объектов и различать идентичность и значение
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T010-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Числовое значение id считают переносимым адресом
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: память и производительность CPython
+          status: обязательно
+      - id: S02-M05-T001-P02
+        title: Равенство и идентичность
+        concepts:
+        - ==
+        - is
+        - is not
+        - None
+        - равенство значений
+        - сравнение идентичности
+        learning_outcomes:
+        - Объяснять выбор сравнения и применять проверку None
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Используют is вместо == для сравнения значений
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: память и производительность CPython
+          status: обязательно
+      - id: S02-M05-T001-P03
+        title: Изменяемость и псевдонимы
+        concepts:
+        - mutable
+        - immutable
+        - общий объект
+        - aliasing
+        - изменение объекта
+        - перепривязка имени
+        learning_outcomes:
+        - Прослеживать последствия изменения и перепривязки нескольких имён
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T001-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Общее значение считают независимыми копиями
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: память и производительность CPython
+          status: обязательно
+      - id: S02-M05-T001-P04
+        title: Специальное значение None
+        concepts:
+        - None
+        - отсутствие значения
+        - is None
+        - None как возвращаемый результат
+        - истинность
+        learning_outcomes:
+        - Различать None, нулевые и пустые значения и проверять отсутствие результата
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T001-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают None, 0 и пустую строку взаимозаменяемыми
+        mandatory_revisit:
+          target_concept: контракты функций и обработка отсутствующего результата
+          target_id: S03-M12
+          status: обязательно
+    - id: S02-M05-T002
+      title: Вводная асимптотика
+      subtopics:
+      - id: S02-M05-T002-P01
+        title: Модель оценки
+        concepts:
+        - размер входа n
+        - число операций
+        - дополнительная память
+        - O(1)
+        - O(n)
+        - O(n²)
+        - худший и средний случаи
+        learning_outcomes:
+        - Оценивать простые циклы и явно указывать модель входа и рассматриваемый случай
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T001-P04
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Big O принимают за точное время выполнения
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: память и производительность CPython
+          status: обязательно
+      - id: S02-M05-T002-P02
+        title: Общие и вложенные циклы
+        concepts:
+        - последовательное выполнение
+        - вложенность
+        - линейный и квадратичный рост
+        - константные множители
+        learning_outcomes:
+        - Сравнивать рост числа операций в циклах без оценки ещё не изученных методов коллекций
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Все вложенные циклы автоматически считают квадратичными
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: память и производительность CPython
+          status: обязательно
+  - id: S02-M06
+    title: Строки и текст
+    topics:
+    - id: S02-M06-T003
+      title: Индексация и срезы
+      subtopics:
+      - id: S02-M06-T003-P01
+        title: Строка как последовательность
+        concepts:
+        - Unicode
+        - кодовая точка
+        - индекс
+        - отрицательная индексация
+        - len()
+        - IndexError
+        learning_outcomes:
+        - Извлекать элементы и объяснять границы индексов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M05-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают количество кодовых точек числом видимых символов
+        mandatory_revisit:
+          target_id: S04-M17
+          target_concept: кодировки и файловый ввод-вывод
+          status: обязательно
+      - id: S02-M06-T003-P02
+        title: Срезы строк
+        concepts:
+        - start
+        - stop
+        - step
+        - исключение правой границы
+        - отрицательный шаг
+        - пустой срез
+        learning_outcomes:
+        - Определять результат среза и проверять граничные случаи
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M06-T003-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают правую границу среза включённой
+        mandatory_revisit:
+          target_id: S04-M17
+          target_concept: кодировки и файловый ввод-вывод
+          status: обязательно
+    - id: S02-M06-T004
+      title: Операции с текстом
+      subtopics:
+      - id: S02-M06-T004-P01
+        title: Поиск и преобразование
+        concepts:
+        - in
+        - find
+        - count
+        - replace
+        - lower
+        - upper
+        - strip
+        - исходная строка
+        learning_outcomes:
+        - Выбирать метод для поиска и преобразования текста без предположения об изменении исходной строки
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S02-M06-T003-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают что replace изменяет исходную строку
+        mandatory_revisit:
+          target_id: S04-M17
+          target_concept: кодировки и файловый ввод-вывод
+          status: обязательно
+      - id: S02-M06-T004-P02
+        title: Разделение и форматирование
+        concepts:
+        - split
+        - join
+        - разделитель
+        - f-строки
+        - форматная спецификация
+        - представление значений
+        learning_outcomes:
+        - Разбивать и собирать текст и выбирать формат вывода
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M06-T004-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Вызывают join у последовательности вместо разделителя
+        mandatory_revisit:
+          target_id: S04-M17
+          target_concept: кодировки и файловый ввод-вывод
+          status: обязательно
+      - id: S02-M06-T004-P03
+        title: Текст и байты
+        concepts:
+        - str
+        - bytes
+        - Unicode
+        - кодировка UTF-8
+        - encode
+        - decode
+        - UnicodeError
+        learning_outcomes:
+        - Различать текст и байты и выбирать направление преобразования
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M06-T004-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают Unicode и UTF-8 одним и тем же
+        mandatory_revisit:
+          target_id: S04-M17
+          target_concept: кодировки и файловый ввод-вывод
+          status: обязательно
+  - id: S02-M07
+    title: Списки
+    topics:
+    - id: S02-M07-T005
+      title: Список как изменяемая последовательность
+      subtopics:
+      - id: S02-M07-T005-P01
+        title: Создание и доступ
+        concepts:
+        - list
+        - литерал
+        - индекс
+        - срез
+        - вложенный список
+        - длина
+        learning_outcomes:
+        - Создавать список, читать и заменять элементы, учитывать границы
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M06-T004-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают срез представлением исходного списка
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+      - id: S02-M07-T005-P02
+        title: Изменение списка
+        concepts:
+        - append
+        - extend
+        - insert
+        - pop
+        - remove
+        - clear
+        - del
+        - срезы присваивания
+        learning_outcomes:
+        - Выбирать операцию изменения и отслеживать состояние списка
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T005-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Путают добавление одного объекта и расширение последовательностью
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+      - id: S02-M07-T005-P03
+        title: Обход и преобразование
+        concepts:
+        - for
+        - enumerate
+        - sorted
+        - sort
+        - reverse
+        - разворот
+        - сравнение ключей
+        learning_outcomes:
+        - Обходить список и выбирать сортировку или разворот с учётом изменения исходного объекта
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T005-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают что list.sort возвращает отсортированный список
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+    - id: S02-M07-T006
+      title: Копирование и стоимость
+      subtopics:
+      - id: S02-M07-T006-P01
+        title: Поверхностная копия
+        concepts:
+        - list.copy
+        - list()
+        - срез
+        - вложенные объекты
+        - общие ссылки
+        learning_outcomes:
+        - Строить схемы поверхностной копии и обнаруживать общие вложенные объекты
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T005-P03
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Поверхностную копию считают независимой на всех уровнях
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+      - id: S02-M07-T006-P02
+        title: Глубокая копия
+        concepts:
+        - copy.copy
+        - copy.deepcopy
+        - граф объектов
+        - независимость вложенного состояния
+        - ограничения
+        learning_outcomes:
+        - Выбирать глубину копирования и объяснять влияние на вложенные объекты
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T006-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают deepcopy всегда необходимой или бесплатной
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+      - id: S02-M07-T006-P03
+        title: Стоимость операций
+        concepts:
+        - индексация
+        - линейный поиск
+        - вставка
+        - удаление
+        - амортизированное добавление
+        - CPython list
+        learning_outcomes:
+        - Оценивать операции списка в CPython и указывать модель и ограничения оценки
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T006-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Принимают амортизированную стоимость за стоимость каждого вызова
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сложность алгоритмов и структуры данных
+          status: обязательно
+  - id: S02-M08
+    title: Кортежи и распаковка
+    topics:
+    - id: S02-M08-T007
+      title: Кортежи
+      subtopics:
+      - id: S02-M08-T007-P01
+        title: Создание и доступ
+        concepts:
+        - tuple
+        - литерал
+        - запятая
+        - пустой и одноэлементный кортеж
+        - индекс
+        - срез
+        learning_outcomes:
+        - Создавать кортежи и различать кортеж и выражение в скобках
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M07-T006-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Одноэлементный кортеж записывают без запятой
+        mandatory_revisit:
+          target_id: S02-M09
+          target_concept: хешируемые ключи словаря
+          status: обязательно
+      - id: S02-M08-T007-P02
+        title: Неизменяемость контейнера
+        concepts:
+        - ссылки на элементы
+        - вложенный изменяемый объект
+        - идентичность элемента
+        learning_outcomes:
+        - Объяснять границы неизменяемости и отслеживать состояние вложенного объекта
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M08-T007-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают все элементы кортежа неизменяемыми
+        mandatory_revisit:
+          target_id: S02-M09
+          target_concept: хешируемые ключи словаря
+          status: обязательно
+    - id: S02-M08-T008
+      title: Упаковка и распаковка
+      subtopics:
+      - id: S02-M08-T008-P01
+        title: Присваивание с распаковкой
+        concepts:
+        - упаковка
+        - распаковка
+        - звёздочное выражение
+        - количество элементов
+        - обмен значений
+        learning_outcomes:
+        - Использовать распаковку и определять ошибку несоответствия числа элементов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M08-T007-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают что звёздочная цель получает кортеж
+        mandatory_revisit:
+          target_id: S02-M09
+          target_concept: хешируемые ключи словаря
+          status: обязательно
+      - id: S02-M08-T008-P02
+        title: Хешируемость
+        concepts:
+        - hash()
+        - равенство
+        - стабильность хеша
+        - неизменяемость и хешируемость
+        - элементы кортежа
+        learning_outcomes:
+        - Определять пригодность объекта как ключа без предположения что любой кортеж хешируем
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M08-T008-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают любой неизменяемый контейнер автоматически хешируемым
+        mandatory_revisit:
+          target_id: S02-M09
+          target_concept: хешируемые ключи словаря
+          status: обязательно
+  - id: S02-M09
+    title: Словари
+    topics:
+    - id: S02-M09-T009
+      title: Словари и операции
+      subtopics:
+      - id: S02-M09-T009-P01
+        title: Модель отображения
+        concepts:
+        - dict
+        - ключ и значение
+        - уникальность ключа
+        - создание
+        - доступ
+        - KeyError
+        - get
+        learning_outcomes:
+        - Создавать словари и выбирать безопасный способ доступа
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M08-T008-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Путают отсутствие ключа со значением None
+        mandatory_revisit:
+          target_id: S06-M22
+          target_concept: коллекции стандартной библиотеки
+          status: обязательно
+      - id: S02-M09-T009-P02
+        title: Изменение и обход
+        concepts:
+        - присваивание
+        - del
+        - pop
+        - update
+        - keys
+        - values
+        - items
+        - порядок вставки
+        - представления
+        learning_outcomes:
+        - Изменять и обходить словарь и различать представление и копию
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M09-T009-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают keys статическим списком
+        mandatory_revisit:
+          target_id: S06-M22
+          target_concept: коллекции стандартной библиотеки
+          status: обязательно
+    - id: S02-M09-T010
+      title: Хеширование и стоимость
+      subtopics:
+      - id: S02-M09-T010-P01
+        title: Ключи и равенство
+        concepts:
+        - hash
+        - равенство ключей
+        - коллизии
+        - контракт хеширования
+        - неизменность хеша
+        learning_outcomes:
+        - Объяснять требования к ключам и последствия нарушения контракта
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M09-T009-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Предполагают что разные объекты всегда имеют разные хеши
+        mandatory_revisit:
+          target_id: S06-M22
+          target_concept: коллекции стандартной библиотеки
+          status: обязательно
+      - id: S02-M09-T010-P02
+        title: Устройство и сложность dict
+        concepts:
+        - хеш-таблица
+        - коллизии
+        - усреднённая и худшая стоимость
+        - порядок вставки
+        - область CPython
+        learning_outcomes:
+        - Объяснять на концептуальном уровне поиск и область применимости оценок
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S02-M09-T010-P01
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Обещают O(1) в худшем случае для любого словаря
+        mandatory_revisit:
+          target_id: S06-M22
+          target_concept: коллекции стандартной библиотеки
+          status: обязательно
+  - id: S02-M10
+    title: Множества
+    topics:
+    - id: S02-M10-T011
+      title: Операции множеств
+      subtopics:
+      - id: S02-M10-T011-P01
+        title: Создание и изменение
+        concepts:
+        - set
+        - пустое множество
+        - add
+        - update
+        - remove
+        - discard
+        - хешируемость элементов
+        learning_outcomes:
+        - Создавать множества и выбирать операцию удаления
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M09-T010-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают {} пустым множеством
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: алгоритмы с множествами
+          status: обязательно
+      - id: S02-M10-T011-P02
+        title: Теоретико-множественные операции
+        concepts:
+        - объединение
+        - пересечение
+        - разность
+        - симметрическая разность
+        - подмножество
+        - принадлежность
+        learning_outcomes:
+        - Выбирать операции для сравнения и объединения наборов
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S02-M10-T011-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Путают разность и симметрическую разность
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: алгоритмы с множествами
+          status: обязательно
+      - id: S02-M10-T011-P03
+        title: frozenset и порядок
+        concepts:
+        - frozenset
+        - неизменяемость
+        - хешируемость
+        - порядок обхода
+        - стоимость принадлежности
+        learning_outcomes:
+        - Выбирать set или frozenset и не полагаться на порядок элементов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M10-T011-P02
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Считают наблюдаемый порядок set гарантированным
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: алгоритмы с множествами
+          status: обязательно
+  - id: S02-M11
+    title: Comprehensions и сопоставление с образцом
+    topics:
+    - id: S02-M11-T012
+      title: Генераторы коллекций
+      subtopics:
+      - id: S02-M11-T012-P01
+        title: List comprehension
+        concepts:
+        - выражение результата
+        - for
+        - фильтр if
+        - порядок вычисления
+        - читаемость
+        learning_outcomes:
+        - Преобразовывать простой цикл в list comprehension и обратно
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M10-T011-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Путают условие фильтра и условное выражение результата
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: ленивая итерация и генераторы
+          status: обязательно
+      - id: S02-M11-T012-P02
+        title: Set и dict comprehension
+        concepts:
+        - генерация множества
+        - ключ и значение
+        - повтор ключа
+        - фильтрация
+        learning_outcomes:
+        - Создавать множество и словарь из исходных данных и объяснять поведение повторов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M11-T012-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Предполагают сохранение всех значений при повторе ключа
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: ленивая итерация и генераторы
+          status: обязательно
+      - id: S02-M11-T012-P03
+        title: Генераторное выражение
+        concepts:
+        - ленивое вычисление
+        - generator expression
+        - скобки
+        - однократный обход
+        - память
+        learning_outcomes:
+        - Различать создание списка и ленивого выражения на наблюдаемом уровне
+        depth: базовая
+        interview_priority: высокий
+        prerequisites:
+        - S02-M11-T012-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают повторяемого обхода уже исчерпанного генератора
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: ленивая итерация и генераторы
+          status: обязательно
+    - id: S02-M11-T013
+      title: Сопоставление с образцом
+      subtopics:
+      - id: S02-M11-T013-P01
+        title: Основы match и case
+        concepts:
+        - subject
+        - case
+        - литеральные образцы
+        - wildcard _
+        - порядок случаев
+        - guard if
+        learning_outcomes:
+        - Выбирать ветвь сопоставления и объяснять порядок её проверки
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S02-M11-T012-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают неограниченное имя в case сравнением с существующей переменной
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: ленивая итерация и генераторы
+          status: обязательно
+      - id: S02-M11-T013-P02
+        title: Образцы последовательностей и отображений
+        concepts:
+        - sequence pattern
+        - mapping pattern
+        - связывание имён
+        - вложенность
+        - ограничения сопоставления строк
+        learning_outcomes:
+        - Читать простые структурные образцы и отслеживать связанные имена
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S02-M11-T013-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Предполагают что строка сопоставляется образцу последовательности как список
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: ленивая итерация и генераторы
+          status: обязательно
+- id: S03
+  title: 'Foundation: функции'
+  status: черновик
+  modules:
+  - id: S03-M12
+    title: Функции и аргументы
+    topics:
+    - id: S03-M12-T001
+      title: Контракт и вызов
+      subtopics:
+      - id: S03-M12-T001-P01
+        title: Контракт функции
+        concepts:
+        - входные данные
+        - предусловие
+        - результат
+        - побочные эффекты
+        - документирование
+        - docstring
+        learning_outcomes:
+        - Формулировать контракт функции и отличать результат от наблюдаемого побочного эффекта
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T009-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Печать или изменение аргумента считают возвращаемым значением
+        mandatory_revisit:
+          target_id: S07-M24
+          target_concept: тестирование контракта
+          status: обязательно
+      - id: S03-M12-T001-P02
+        title: Функция как объект
+        concepts:
+        - объект функции
+        - имя функции
+        - присваивание
+        - передача функции
+        - вызов
+        - callable
+        learning_outcomes:
+        - Передавать функцию как значение и различать сам объект и результат его вызова
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T009-P01
+        - S02-M05-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Передают результат вызова вместо функции
+        mandatory_revisit:
+          target_id: S03-M14
+          target_concept: функции высшего порядка
+          status: обязательно
+      - id: S03-M12-T001-P03
+        title: Выполнение вызова
+        concepts:
+        - вычисление аргументов
+        - связывание параметров
+        - отдельное пространство имён вызова
+        - return
+        - порядок вычисления
+        learning_outcomes:
+        - Прослеживать вычисление аргументов, выполнение тела и возврат управления
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S01-M04-T010-P01
+        - S02-M05-T001-P03
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Принимают параметры разных вызовов за одно общее локальное имя
+        mandatory_revisit:
+          target_id: S03-M14
+          target_concept: вложенные вызовы и рекурсия
+          status: обязательно
+    - id: S03-M12-T002
+      title: Сигнатура и связывание аргументов
+      subtopics:
+      - id: S03-M12-T002-P01
+        title: Позиционные и именованные аргументы
+        concepts:
+        - параметр и аргумент
+        - позиционный аргумент
+        - ключевой аргумент
+        - порядок
+        - повторная передача
+        - TypeError
+        learning_outcomes:
+        - Определять соответствие аргументов параметрам и находить некорректные вызовы
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T001-P03
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Путают порядок параметров с порядком записи именованных аргументов
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: передача аргументов через обёртку
+          status: обязательно
+      - id: S03-M12-T002-P02
+        title: Значения по умолчанию
+        concepts:
+        - необязательный параметр
+        - вычисление значения по умолчанию
+        - момент определения
+        - общий изменяемый объект
+        - None как маркер
+        learning_outcomes:
+        - Определять момент вычисления значения по умолчанию и выбирать безопасный контракт для изменяемого значения
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T002-P01
+        - S02-M05-T001-P04
+        - S02-M07-T006-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Ожидают создания нового изменяемого значения при каждом вызове
+        mandatory_revisit:
+          target_id: S03-M13
+          target_concept: связывание имён и время вычисления
+          status: обязательно
+      - id: S03-M12-T002-P03
+        title: Только позиционные и только именованные параметры
+        concepts:
+        - разделитель /
+        - разделитель *
+        - positional-only
+        - keyword-only
+        - сигнатура
+        - ограничения вызова
+        learning_outcomes:
+        - Читать сигнатуры с / и * и определять допустимые способы вызова
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают что каждый параметр можно передать по имени
+        mandatory_revisit:
+          target_id: S06-M22
+          target_concept: чтение интерфейсов стандартной библиотеки
+          status: обязательно
+      - id: S03-M12-T002-P04
+        title: Переменное число аргументов
+        concepts:
+        - '*args'
+        - '**kwargs'
+        - кортеж позиционных аргументов
+        - словарь именованных аргументов
+        - порядок параметров
+        learning_outcomes:
+        - Обрабатывать переменное число аргументов и читать составную сигнатуру
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T002-P03
+        - S02-M08-T007-P01
+        - S02-M09-T009-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают имена args и kwargs синтаксически обязательными
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: универсальные обёртки
+          status: обязательно
+      - id: S03-M12-T002-P05
+        title: Распаковка в вызове
+        concepts:
+        - '* в вызове'
+        - '** в вызове'
+        - позиционная последовательность
+        - отображение
+        - дублирование аргумента
+        learning_outcomes:
+        - Использовать распаковку при вызове и находить конфликты связывания
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T002-P04
+        - S02-M08-T008-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Не замечают повторную передачу одного параметра через распаковку
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: проброс аргументов в декораторе
+          status: обязательно
+    - id: S03-M12-T003
+      title: Объекты и границы функции
+      subtopics:
+      - id: S03-M12-T003-P01
+        title: Аргументы и изменяемость
+        concepts:
+        - связывание имени параметра
+        - ссылка на объект
+        - изменение объекта
+        - переприсваивание
+        - общий объект
+        learning_outcomes:
+        - Прослеживать влияние изменения и перепривязки параметра на вызывающий код
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T002-P01
+        - S02-M05-T001-P03
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Описывают все аргументы как передачу копии или как передачу переменной по ссылке
+        mandatory_revisit:
+          target_id: S07-M24
+          target_concept: тесты побочных эффектов
+          status: обязательно
+      - id: S03-M12-T003-P02
+        title: Результат и множественный возврат
+        concepts:
+        - return
+        - неявный None
+        - досрочное завершение
+        - упаковка значений
+        - распаковка результата
+        learning_outcomes:
+        - Выбирать контракт возврата и определять объект результата при нескольких возвращаемых выражениях
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T001-P01
+        - S02-M08-T008-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают что функция возвращает несколько отдельных объектов без контейнера
+        mandatory_revisit:
+          target_id: S07-M24
+          target_concept: проверка контракта и граничных значений
+          status: обязательно
+  - id: S03-M13
+    title: Области видимости и замыкания
+    topics:
+    - id: S03-M13-T004
+      title: Поиск и связывание имён
+      subtopics:
+      - id: S03-M13-T004-P01
+        title: Пространства имён и LEGB
+        concepts:
+        - пространство имён
+        - область видимости
+        - local
+        - enclosing
+        - global
+        - builtins
+        - затенение
+        learning_outcomes:
+        - Определять источник имени в обычных вложенных функциях и объяснять границы модели LEGB
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T001-P03
+        - S02-M05-T001-P01
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Считают имя переменной глобальным для всех модулей приложения
+        mandatory_revisit:
+          target_id: S04-M16
+          target_concept: пространства имён модулей
+          status: обязательно
+      - id: S03-M13-T004-P02
+        title: Локальное связывание и ошибки поиска
+        concepts:
+        - связывание в блоке
+        - локальное имя
+        - чтение до присваивания
+        - UnboundLocalError
+        - NameError
+        learning_outcomes:
+        - Определять область имени в функции и распознавать чтение несвязанного локального имени
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T004-P01
+        - S01-M01-T002-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают присваивание после чтения не влияющим на область видимости
+        mandatory_revisit:
+          target_id: S04-M15
+          target_concept: диагностика и обработка исключений
+          status: обязательно
+      - id: S03-M13-T004-P03
+        title: Объявление global
+        concepts:
+        - global
+        - область модуля
+        - перепривязка имени
+        - изменение объекта
+        - ограничения объявления
+        learning_outcomes:
+        - Объяснять область действия global и различать перепривязку и изменение объекта
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T004-P02
+        - S03-M12-T003-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Используют global для изменения содержимого глобального списка
+        mandatory_revisit:
+          target_id: S04-M16
+          target_concept: изоляция пространств имён модулей
+          status: обязательно
+    - id: S03-M13-T005
+      title: Вложенные функции и замыкания
+      subtopics:
+      - id: S03-M13-T005-P01
+        title: Вложенная функция и свободное имя
+        concepts:
+        - вложенное определение
+        - внешняя функция
+        - свободная переменная
+        - enclosing scope
+        - время вызова
+        learning_outcomes:
+        - Прослеживать поиск свободного имени во вложенной функции
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T004-P01
+        - S03-M12-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Считают вложенную функцию автоматически копией значений внешних имён
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: функции-обёртки и декораторы
+          status: обязательно
+      - id: S03-M13-T005-P02
+        title: Замыкание и время связывания
+        concepts:
+        - замыкание
+        - сохранение доступа к внешнему связыванию
+        - позднее связывание
+        - цикл
+        - значение по умолчанию как приём
+        learning_outcomes:
+        - Объяснять время поиска свободного имени и устранять неоднозначность при создании функций в цикле
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T005-P01
+        - S03-M12-T002-P02
+        - S01-M03-T008-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Ожидают что каждая функция автоматически запомнит текущее значение имени цикла
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: замыкания в декораторах
+          status: обязательно
+      - id: S03-M13-T005-P03
+        title: Перепривязка nonlocal
+        concepts:
+        - nonlocal
+        - ближайшая охватывающая функция
+        - перепривязка
+        - состояние замыкания
+        - ограничения
+        learning_outcomes:
+        - Создавать замыкание с управляемым состоянием и объяснять область действия nonlocal
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T005-P02
+        - S03-M13-T004-P03
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Применяют nonlocal для имени уровня модуля
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: состояние обёртки
+          status: обязательно
+    - id: S03-M13-T006
+      title: Лямбда-выражения
+      subtopics:
+      - id: S03-M13-T006-P01
+        title: lambda и анонимные функции
+        concepts:
+        - lambda
+        - выражение
+        - параметры
+        - возвращаемое значение
+        - функция как значение
+        - читаемость
+        learning_outcomes:
+        - Использовать lambda для короткого выражения и выбирать именованную функцию при сложной логике
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S03-M12-T001-P02
+        - S03-M13-T005-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают что lambda может содержать произвольный блок инструкций
+        mandatory_revisit:
+          target_id: S03-M14
+          target_concept: ключи сортировки и функции высшего порядка
+          status: обязательно
+      - id: S03-M13-T006-P02
+        title: Область видимости lambda
+        concepts:
+        - свободные имена
+        - параметры
+        - позднее связывание
+        - создание функций в цикле
+        learning_outcomes:
+        - Прослеживать связывание имён в lambda и объяснять влияние времени вызова
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M13-T006-P01
+        - S03-M13-T005-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Приписывают lambda особую модель областей видимости
+        mandatory_revisit:
+          target_id: S06-M21
+          target_concept: замыкания в обработчиках и обёртках
+          status: обязательно
+  - id: S03-M14
+    title: Рекурсия и функциональные инструменты
+    topics:
+    - id: S03-M14-T007
+      title: Рекурсивные решения
+      subtopics:
+      - id: S03-M14-T007-P01
+        title: База и рекурсивный переход
+        concepts:
+        - рекурсия
+        - базовый случай
+        - рекурсивный случай
+        - уменьшение задачи
+        - завершение
+        learning_outcomes:
+        - Выделять базовый и рекурсивный случаи и обосновывать завершение
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T001-P03
+        - S01-M03-T007-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Проверяют базовый случай после рекурсивного вызова без гарантии завершения
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: обход и рекурсивные структуры
+          status: обязательно
+      - id: S03-M14-T007-P02
+        title: Стек вызовов и ограничения
+        concepts:
+        - стек вызовов
+        - кадр выполнения
+        - возврат
+        - глубина рекурсии
+        - RecursionError
+        - лимит CPython
+        learning_outcomes:
+        - Прослеживать стек и объяснять ограничение глубины без предположений о переносимом значении лимита
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M14-T007-P01
+        - S01-M01-T002-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Считают что хвостовая рекурсия в CPython автоматически оптимизируется
+        mandatory_revisit:
+          target_id: S06-M23
+          target_concept: рамки реализации и производительность
+          status: обязательно
+      - id: S03-M14-T007-P03
+        title: Сложность рекурсии
+        concepts:
+        - число вызовов
+        - глубина стека
+        - повторяющиеся подзадачи
+        - время
+        - дополнительная память
+        - итеративная альтернатива
+        learning_outcomes:
+        - Оценивать время и память простого рекурсивного алгоритма с явными допущениями
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M14-T007-P02
+        - S02-M05-T002-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Игнорируют память стека при оценке дополнительного пространства
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: алгоритмическая сложность
+          status: обязательно
+    - id: S03-M14-T008
+      title: Функции высшего порядка
+      subtopics:
+      - id: S03-M14-T008-P01
+        title: Функции как аргументы
+        concepts:
+        - функция высшего порядка
+        - callback
+        - callable
+        - key
+        - sorted
+        - устойчивость сортировки
+        learning_outcomes:
+        - Передавать функцию для преобразования ключа сортировки и объяснять роль обратного вызова
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S03-M12-T001-P02
+        - S03-M13-T006-P01
+        - S02-M07-T005-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Передают результат вызова key вместо самого вызываемого объекта
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: сортировка и оценка сложности
+          status: обязательно
+      - id: S03-M14-T008-P02
+        title: map и filter
+        concepts:
+        - map
+        - filter
+        - функция преобразования
+        - предикат
+        - ленивое получение результатов
+        - однократное потребление
+        learning_outcomes:
+        - Применять map и filter и сопоставлять их с понятным выражением-генератором
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S03-M14-T008-P01
+        - S02-M11-T012-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают что map сразу возвращает готовый список
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: протокол итератора и ленивые вычисления
+          status: обязательно
+      - id: S03-M14-T008-P03
+        title: zip и параллельный обход
+        concepts:
+        - zip
+        - пары элементов
+        - кратчайший вход
+        - strict=True
+        - ленивый обход
+        - распаковка
+        learning_outcomes:
+        - Обходить последовательности параллельно и выбирать проверку одинаковой длины
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S02-M08-T008-P01
+        - S02-M11-T012-P03
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Не учитывают усечение результата по кратчайшему входу
+        mandatory_revisit:
+          target_id: S06-M20
+          target_concept: итераторы и исчерпание
+          status: обязательно
+      - id: S03-M14-T008-P04
+        title: functools.partial
+        concepts:
+        - минимальный import модуля
+        - functools.partial
+        - фиксация аргументов
+        - вызываемый объект
+        - повторное использование
+        learning_outcomes:
+        - Создавать вызываемый объект с частью аргументов и объяснять его контракт; полноценный import изучить позднее
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S03-M12-T002-P05
+        - S03-M14-T008-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают partial вызовом исходной функции при создании
+        mandatory_revisit:
+          target_id: S04-M16
+          target_concept: модули и import
+          status: обязательно
+      - id: S03-M14-T008-P05
+        title: functools.reduce и свёртка
+        concepts:
+        - reduce
+        - аккумулятор
+        - последовательное применение
+        - начальное значение
+        - пустая последовательность
+        - читаемость
+        learning_outcomes:
+        - Прослеживать свёртку и выбирать встроенную альтернативу или явный цикл, когда они понятнее
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S03-M14-T008-P01
+        - S01-M03-T008-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Игнорируют начальное значение и случай пустого входа
+        mandatory_revisit:
+          target_id: S07-M25
+          target_concept: выбор алгоритма и накопление результата
+          status: обязательно
+- id: S04
+  title: 'Foundation: исключения, модули и файлы'
+  status: черновик
+  modules:
+  - id: S04-M15
+    title: Исключения
+    topics:
+    - id: S04-M15-T001
+      title: Исключения и обработка
+      subtopics:
+      - id: S04-M15-T001-P01
+        title: Иерархия и распространение
+        concepts:
+        - BaseException
+        - Exception
+        - тип исключения
+        - стек вызовов
+        - traceback
+        learning_outcomes:
+        - Прослеживать распространение исключения между вызовами
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S03-M14-T008-P05
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Путают возвращённый None с исключением
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M15-T001-P02
+        title: try и except
+        concepts:
+        - try
+        - except
+        - порядок обработчиков
+        - конкретный тип
+        - as
+        learning_outcomes:
+        - Перехватывать ожидаемую ошибку в подходящем месте
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S04-M15-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Слишком широкий except скрывает дефект
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S04-M15-T002
+      title: Завершение и собственные ошибки
+      subtopics:
+      - id: S04-M15-T002-P01
+        title: else и finally
+        concepts:
+        - else
+        - finally
+        - return
+        - очистка
+        - подавление исключения
+        learning_outcomes:
+        - Предсказывать выполнение блоков при успехе и ошибке
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S04-M15-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают finally выполняющимся только при ошибке
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M15-T002-P02
+        title: raise и пользовательские исключения
+        concepts:
+        - raise
+        - повторное возбуждение
+        - cause
+        - собственный подкласс Exception
+        learning_outcomes:
+        - Создавать и документировать ошибки контракта
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S04-M15-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Перехватывают собственную ошибку сразу после raise
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S04-M16
+    title: Модули, пакеты и окружение
+    topics:
+    - id: S04-M16-T001
+      title: Модули и система импорта
+      subtopics:
+      - id: S04-M16-T001-P01
+        title: Модуль и пространство имён
+        concepts:
+        - файл модуля
+        - import
+        - from import
+        - __name__
+        - __main__
+        learning_outcomes:
+        - Разделять программу на модули и объяснять доступ к именам
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M15-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - from import считают живой ссылкой на имя модуля
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M16-T001-P02
+        title: Пакеты и поиск
+        concepts:
+        - пакет
+        - __init__.py
+        - абсолютный и относительный импорт
+        - sys.path
+        learning_outcomes:
+        - Организовывать небольшой пакет и диагностировать путь поиска
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M16-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Полагаются на текущий каталог как универсальное правило
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S04-M16-T002
+      title: Окружение и зависимости
+      subtopics:
+      - id: S04-M16-T002-P01
+        title: Виртуальное окружение
+        concepts:
+        - venv
+        - интерпретатор
+        - активация
+        - изоляция пакетов
+        learning_outcomes:
+        - Создавать окружение и проверять используемый интерпретатор
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M16-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Активацию путают с установкой Python
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M16-T002-P02
+        title: Установка пакетов
+        concepts:
+        - pip
+        - python -m pip
+        - версия зависимости
+        - воспроизводимость
+        learning_outcomes:
+        - Устанавливать зависимости в выбранное окружение и фиксировать версии
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M16-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - pip запускают от другого интерпретатора
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S04-M17
+    title: Файлы и данные
+    topics:
+    - id: S04-M17-T001
+      title: Файлы и ресурсы
+      subtopics:
+      - id: S04-M17-T001-P01
+        title: Открытие и закрытие
+        concepts:
+        - open
+        - режим
+        - text и binary
+        - encoding
+        - with
+        - ресурс
+        learning_outcomes:
+        - Читать и записывать файл с явной кодировкой и закрытием
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M16-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Полагаются на немедленное освобождение файла сборщиком мусора
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M17-T001-P02
+        title: Пути и pathlib
+        concepts:
+        - Path
+        - относительный путь
+        - абсолютный путь
+        - cwd
+        - файл и каталог
+        learning_outcomes:
+        - Строить переносимые пути и учитывать рабочий каталог
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M17-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают путь относительно файла программы по умолчанию
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S04-M17-T002
+      title: Структурированные данные
+      subtopics:
+      - id: S04-M17-T002-P01
+        title: JSON
+        concepts:
+        - json.load
+        - json.dump
+        - типы JSON
+        - кодировка
+        - сериализация
+        learning_outcomes:
+        - Сохранять и читать поддерживаемые структуры с проверкой формата
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M17-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Полагают что любой Python-объект сериализуется в JSON
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S04-M17-T002-P02
+        title: CSV
+        concepts:
+        - csv.reader
+        - csv.writer
+        - диалект
+        - заголовок
+        - newline
+        learning_outcomes:
+        - Читать и записывать табличные данные с учётом разделителя
+        depth: применение
+        interview_priority: средний
+        prerequisites:
+        - S04-M17-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Разбивают CSV строку простым split
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+- id: S05
+  title: 'Junior: объектно-ориентированное программирование'
+  status: черновик
+  modules:
+  - id: S05-M18
+    title: Основы ООП
+    topics:
+    - id: S05-M18-T001
+      title: Классы и объекты
+      subtopics:
+      - id: S05-M18-T001-P01
+        title: Класс и экземпляр
+        concepts:
+        - class
+        - экземпляр
+        - атрибут
+        - self
+        - __init__
+        - метод
+        learning_outcomes:
+        - Определять класс и различать атрибуты экземпляра и класса
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S04-M17-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - self считают ключевым словом языка
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S05-M18-T001-P02
+        title: Инкапсуляция и композиция
+        concepts:
+        - инвариант
+        - публичный интерфейс
+        - соглашение _
+        - композиция
+        learning_outcomes:
+        - Выбирать составной объект и поддерживать инвариант
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M18-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают подчёркивание абсолютной защитой доступа
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S05-M18-T002
+      title: Отношения типов
+      subtopics:
+      - id: S05-M18-T002-P01
+        title: Наследование и переопределение
+        concepts:
+        - базовый класс
+        - наследник
+        - super
+        - override
+        - полиморфизм
+        learning_outcomes:
+        - Объяснять выбор наследования и безопасно переопределять поведение
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M18-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - super считают прямым вызовом конкретного родителя
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S05-M18-T002-P02
+        title: MRO и isinstance
+        concepts:
+        - MRO
+        - множественное наследование
+        - isinstance
+        - type
+        learning_outcomes:
+        - Читать простой порядок поиска методов и выбирать проверку типа
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S05-M18-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: true
+        interview_traps:
+        - Путают type(x) is T с isinstance(x,T)
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S05-M19
+    title: Модель данных Python
+    topics:
+    - id: S05-M19-T001
+      title: Протоколы модели данных
+      subtopics:
+      - id: S05-M19-T001-P01
+        title: Специальные методы
+        concepts:
+        - __repr__
+        - __str__
+        - __eq__
+        - __hash__
+        - __len__
+        - __bool__
+        learning_outcomes:
+        - Проектировать согласованное поведение объектов
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M18-T002-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - После определения __eq__ ожидают прежнюю хешируемость
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S05-M19-T001-P02
+        title: Доступ к атрибутам
+        concepts:
+        - property
+        - getter
+        - setter
+        - descriptor protocol
+        learning_outcomes:
+        - Использовать property и объяснять связь с дескрипторами
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M19-T001-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - property считают обычным сохранённым полем
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S05-M19-T002
+      title: Помощники классов
+      subtopics:
+      - id: S05-M19-T002-P01
+        title: dataclass
+        concepts:
+        - '@dataclass'
+        - поля
+        - default_factory
+        - сравнение
+        - frozen
+        learning_outcomes:
+        - Выбирать dataclass и безопасно задавать изменяемые значения
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M19-T001-P02
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Используют изменяемое значение по умолчанию без фабрики
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S05-M19-T002-P02
+        title: slots и ограничения
+        concepts:
+        - __slots__
+        - словарь экземпляра
+        - память
+        - ограничения наследования
+        learning_outcomes:
+        - Объяснять назначение slots и границы применения
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M19-T002-P01
+        estimated_theory_questions: 4
+        cpython_internals: false
+        interview_traps:
+        - Считают slots общей гарантией неизменяемости
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+- id: S06
+  title: 'Junior: механизмы Python'
+  status: черновик
+  modules:
+  - id: S06-M20
+    title: Итераторы и генераторы
+    topics:
+    - id: S06-M20-T001
+      title: Протокол итерации
+      subtopics:
+      - id: S06-M20-T001-P01
+        title: Iterable и iterator
+        concepts:
+        - iterable
+        - iterator
+        - iter
+        - next
+        - StopIteration
+        learning_outcomes:
+        - Различать источник итератора и сам итератор
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S05-M19-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают каждый iterable одноразовым
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M20-T001-P02
+        title: Цикл и исчерпание
+        concepts:
+        - __iter__
+        - __next__
+        - for
+        - исчерпание
+        - повторный обход
+        learning_outcomes:
+        - Прослеживать повторное использование итератора
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M20-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают что исчерпанный итератор автоматически перезапустится
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S06-M20-T002
+      title: Генераторы
+      subtopics:
+      - id: S06-M20-T002-P01
+        title: yield и состояние
+        concepts:
+        - generator function
+        - yield
+        - приостановка
+        - локальное состояние
+        learning_outcomes:
+        - Создавать генератор и прослеживать его выполнение
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M20-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают тело генератора выполненным при вызове функции
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M20-T002-P02
+        title: yield from и композиция
+        concepts:
+        - yield from
+        - вложенный iterable
+        - делегирование
+        - return генератора
+        learning_outcomes:
+        - Компоновать генераторы и объяснять делегирование
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M20-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Приравнивают yield from к yield целого объекта
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S06-M21
+    title: Декораторы и контекстные менеджеры
+    topics:
+    - id: S06-M21-T001
+      title: Декораторы
+      subtopics:
+      - id: S06-M21-T001-P01
+        title: Функция-обёртка
+        concepts:
+        - decorator
+        - wrapper
+        - замыкание
+        - '*args'
+        - '**kwargs'
+        learning_outcomes:
+        - Создавать простой декоратор и объяснять момент применения
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M20-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают декоратор вызовом при каждом определении функции
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M21-T001-P02
+        title: functools.wraps
+        concepts:
+        - wraps
+        - __name__
+        - __doc__
+        - __wrapped__
+        - метаданные
+        learning_outcomes:
+        - Сохранять метаданные и объяснять их назначение
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M21-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Считают wraps изменением логики исходной функции
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S06-M21-T002
+      title: Контекстные менеджеры
+      subtopics:
+      - id: S06-M21-T002-P01
+        title: Протокол with
+        concepts:
+        - __enter__
+        - __exit__
+        - исключение
+        - ресурс
+        - подавление
+        learning_outcomes:
+        - Реализовывать базовый менеджер и объяснять завершение
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S06-M21-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Возврат True из __exit__ считают повторным возбуждением
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M21-T002-P02
+        title: contextlib
+        concepts:
+        - contextmanager
+        - yield
+        - cleanup
+        - closing
+        learning_outcomes:
+        - Выбирать простой менеджер на основе генератора
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M21-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Код очистки размещают без гарантии выполнения
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S06-M22
+    title: Типизация и стандартная библиотека
+    topics:
+    - id: S06-M22-T001
+      title: Аннотации и типизация
+      subtopics:
+      - id: S06-M22-T001-P01
+        title: Базовые аннотации
+        concepts:
+        - аннотация параметра и результата
+        - list[T]
+        - T | None
+        - type alias
+        learning_outcomes:
+        - Описывать интерфейс и отличать аннотацию от проверки во время выполнения
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M21-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Ожидают runtime-проверки аннотаций
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M22-T001-P02
+        title: Протоколы типов
+        concepts:
+        - typing
+        - Callable
+        - Iterable
+        - Protocol
+        - статический анализ
+        learning_outcomes:
+        - Выбирать узкий контракт и читать результат проверки типов
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S06-M22-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Смешивают структурное описание с наследованием реализации
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S06-M22-T002
+      title: Стандартная библиотека
+      subtopics:
+      - id: S06-M22-T002-P01
+        title: Коллекции и итерация
+        concepts:
+        - collections
+        - Counter
+        - defaultdict
+        - deque
+        - itertools
+        - chain
+        learning_outcomes:
+        - Выбирать стандартный инструмент для типичных задач
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M22-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - defaultdict создаёт значение при чтении отсутствующего ключа
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M22-T002-P02
+        title: Текст и время
+        concepts:
+        - datetime
+        - timezone
+        - re
+        - шаблон
+        - экранирование
+        learning_outcomes:
+        - Работать с датой, временем и простыми регулярными выражениями
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M22-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Смешивают naive и aware datetime
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S06-M23
+    title: Память и производительность
+    topics:
+    - id: S06-M23-T001
+      title: Память CPython
+      subtopics:
+      - id: S06-M23-T001-P01
+        title: Ссылки и сборка циклов
+        concepts:
+        - reference counting
+        - gc
+        - достижимость
+        - цикл ссылок
+        learning_outcomes:
+        - Объяснять управление памятью CPython с границами применимости
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S06-M22-T002-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Обещают одинаковый момент освобождения во всех реализациях
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M23-T001-P02
+        title: GIL и исполнения
+        concepts:
+        - GIL
+        - обычная сборка CPython 3.14
+        - поток
+        - free-threaded build
+        learning_outcomes:
+        - Различать гарантии языка и конфигурацию CPython
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S06-M23-T001-P01
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Считают GIL свойством самого языка Python
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S06-M23-T002
+      title: Представление и измерение
+      subtopics:
+      - id: S06-M23-T002-P01
+        title: Байткод CPython
+        concepts:
+        - компиляция
+        - code object
+        - bytecode
+        - dis
+        - нестабильность инструкций
+        learning_outcomes:
+        - Читать простой dis без привязки к постоянному набору инструкций
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S06-M23-T001-P02
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Считают байткод переносимым контрактом языка
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S06-M23-T002-P02
+        title: Профилирование и timeit
+        concepts:
+        - timeit
+        - измерение
+        - шум
+        - Big O
+        - узкое место
+        learning_outcomes:
+        - Проводить ограниченное измерение и соотносить его с асимптотикой
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M23-T002-P01
+        estimated_theory_questions: 4
+        cpython_internals: true
+        interview_traps:
+        - Приравнивают одно измерение к доказательству сложности
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+- id: S07
+  title: Junior Interview Ready
+  status: черновик
+  modules:
+  - id: S07-M24
+    title: Тестирование и качество кода
+    topics:
+    - id: S07-M24-T001
+      title: Тестирование
+      subtopics:
+      - id: S07-M24-T001-P01
+        title: unittest и граничные случаи
+        concepts:
+        - unittest
+        - TestCase
+        - assert
+        - setUp
+        - независимость тестов
+        learning_outcomes:
+        - Создавать независимые проверки контракта и границ
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S06-M23-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Тестируют только один счастливый сценарий
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M24-T001-P02
+        title: pytest и mocking
+        concepts:
+        - pytest
+        - fixture
+        - parametrization
+        - unittest.mock
+        - граница зависимости
+        learning_outcomes:
+        - Применять тестовый инструмент и подменять внешний эффект
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M24-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Mock используют вместо проверки собственного алгоритма
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S07-M24-T002
+      title: Качество и отладка
+      subtopics:
+      - id: S07-M24-T002-P01
+        title: Отладка и стиль
+        concepts:
+        - breakpoint
+        - traceback
+        - логирование
+        - PEP 8
+        - читаемость
+        learning_outcomes:
+        - Локализовать дефект и улучшать читаемость кода
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M24-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Форматирование принимают за доказательство корректности
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M24-T002-P02
+        title: Базовый Git и проект
+        concepts:
+        - git status
+        - commit
+        - diff
+        - инструкция запуска
+        - зависимости
+        learning_outcomes:
+        - Подготовить воспроизводимый небольшой проект
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M24-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Коммитят окружение и секреты
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S07-M25
+    title: Алгоритмы и структуры данных
+    topics:
+    - id: S07-M25-T001
+      title: Базовые алгоритмы
+      subtopics:
+      - id: S07-M25-T001-P01
+        title: Поиск и сортировка
+        concepts:
+        - линейный поиск
+        - бинарный поиск
+        - sorted
+        - инвариант
+        - Big O
+        learning_outcomes:
+        - Выбирать поиск по предусловиям и оценивать сложность
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M24-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Используют бинарный поиск на неотсортированных данных
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M25-T001-P02
+        title: Два указателя и окно
+        concepts:
+        - two pointers
+        - sliding window
+        - инвариант
+        - границы
+        learning_outcomes:
+        - Определять применимость приёма и проверять крайние случаи
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M25-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Меняют границы окна без сохранения инварианта
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S07-M25-T002
+      title: Структуры данных
+      subtopics:
+      - id: S07-M25-T002-P01
+        title: Стек и очередь
+        concepts:
+        - stack
+        - queue
+        - list
+        - collections.deque
+        - операции и стоимость
+        learning_outcomes:
+        - Выбирать структуру для порядка обработки
+        depth: понимание механизма
+        interview_priority: высокий
+        prerequisites:
+        - S07-M25-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Удаляют из начала списка в цикле без оценки стоимости
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M25-T002-P02
+        title: Деревья на базовом уровне
+        concepts:
+        - узел
+        - корень
+        - обход
+        - рекурсия
+        - глубина
+        learning_outcomes:
+        - Читать и реализовывать простой обход дерева
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M25-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Смешивают глубину дерева и число узлов
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+  - id: S07-M26
+    title: Интеграция, защита и собеседования
+    topics:
+    - id: S07-M26-T001
+      title: Интеграция и защита
+      subtopics:
+      - id: S07-M26-T001-P01
+        title: Самостоятельный проект
+        concepts:
+        - контракт
+        - модули
+        - тесты
+        - документация
+        - защита
+        learning_outcomes:
+        - Защищать небольшое решение и менять его по уточнению
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M25-T002-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Не могут объяснить собственное решение
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M26-T001-P02
+        title: Смешанный контроль
+        concepts:
+        - теория
+        - анализ кода
+        - практика
+        - граничные случаи
+        learning_outcomes:
+        - Подтверждать результаты всех обязательных групп
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M26-T001-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Один сильный компонент скрывает критический пробел
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+    - id: S07-M26-T002
+      title: Пробные собеседования
+      subtopics:
+      - id: S07-M26-T002-P01
+        title: Устное объяснение
+        concepts:
+        - краткий ответ
+        - подробный ответ
+        - уточнение
+        - ограничения
+        learning_outcomes:
+        - Объяснять механизм и исправлять неточность после уточнения
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M26-T001-P02
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Выдают свойство CPython за гарантию языка
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно
+      - id: S07-M26-T002-P02
+        title: Два итоговых собеседования
+        concepts:
+        - разные эквивалентные наборы
+        - рубрика
+        - обратная связь
+        - пересдача
+        learning_outcomes:
+        - Проходить две последовательные итоговые проверки по рубрике
+        depth: применение
+        interview_priority: высокий
+        prerequisites:
+        - S07-M26-T002-P01
+        estimated_theory_questions: 3
+        cpython_internals: false
+        interview_traps:
+        - Заученный ответ не выдерживает изменения условия
+        mandatory_revisit:
+          target_id: S07-M26
+          target_concept: итоговая интеграция и собеседование
+          status: обязательно

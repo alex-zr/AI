@@ -1,0 +1,2 @@
+label = "север"
+print(label)

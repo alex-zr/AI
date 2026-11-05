@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Три слоя границы L01</title>
+  <desc id="desc">Схема показывает рабочую область, запрос и проверку как три слоя ограничения действий агента; всё вне рабочей области запрещено.</desc>
+  <rect width="1000" height="620" fill="#ffffff"/>
+  <text x="40" y="48" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#17324d">Три слоя границы L01</text>
+  <text x="40" y="76" font-family="Arial, sans-serif" font-size="16" fill="#5b6770">Одного текста в промпте недостаточно: граница задаётся областью, запросом и проверкой</text>
+
+  <g>
+    <rect x="40" y="110" width="290" height="300" rx="16" fill="#eaf1f8" stroke="#1f4e79" stroke-width="2"/>
+    <circle cx="72" cy="142" r="18" fill="#1f4e79"/>
+    <text x="72" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">1</text>
+    <text x="100" y="148" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">Рабочая область</text>
+    <path d="M70 190 h48 l12 14 h64 v62 h-124 z" fill="#ffffff" stroke="#1f4e79" stroke-width="2"/>
+    <path d="M70 204 h124" stroke="#1f4e79" stroke-width="2"/>
+    <text x="70" y="292" font-family="Arial, sans-serif" font-size="15" fill="#17324d">L01-opencode/</text>
+    <text x="70" y="314" font-family="Arial, sans-serif" font-size="15" fill="#17324d">L01-codex/</text>
+    <text x="70" y="350" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Только эти папки разрешены.</text>
+    <text x="70" y="372" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Всё выше и рядом — вне области.</text>
+  </g>
+
+  <g>
+    <rect x="355" y="110" width="290" height="300" rx="16" fill="#fbe9dd" stroke="#c55a11" stroke-width="2"/>
+    <circle cx="387" cy="142" r="18" fill="#c55a11"/>
+    <text x="387" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">2</text>
+    <text x="415" y="148" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">Запрос</text>
+    <rect x="382" y="186" width="236" height="112" rx="8" fill="#ffffff" stroke="#c55a11" stroke-width="1.5"/>
+    <text x="398" y="214" font-family="Arial, sans-serif" font-size="14" fill="#17324d">«Работай только в папке</text>
+    <text x="398" y="236" font-family="Arial, sans-serif" font-size="14" fill="#17324d">&lt;полный путь&gt;.</text>
+    <text x="398" y="258" font-family="Arial, sans-serif" font-size="14" fill="#17324d">Не изменяй ничего</text>
+    <text x="398" y="280" font-family="Arial, sans-serif" font-size="14" fill="#17324d">вне неё».</text>
+    <text x="382" y="334" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Путь и запрет названы явно.</text>
+    <text x="382" y="356" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Запрос одинаков для двух сред.</text>
+    <text x="382" y="384" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Разрешение не выдаётся «на всё».</text>
+  </g>
+
+  <g>
+    <rect x="670" y="110" width="290" height="300" rx="16" fill="#eef6ee" stroke="#2e6b3a" stroke-width="2"/>
+    <circle cx="702" cy="142" r="18" fill="#2e6b3a"/>
+    <text x="702" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">3</text>
+    <text x="730" y="148" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">Проверка</text>
+    <rect x="696" y="186" width="238" height="112" rx="8" fill="#17324d"/>
+    <text x="710" y="214" font-family="Menlo, Consolas, monospace" font-size="13" fill="#d9f0ff">find . -type f | sort</text>
+    <text x="710" y="238" font-family="Menlo, Consolas, monospace" font-size="13" fill="#d9f0ff">git status --porcelain</text>
+    <text x="710" y="262" font-family="Menlo, Consolas, monospace" font-size="13" fill="#d9f0ff">git log --oneline</text>
+    <text x="710" y="286" font-family="Menlo, Consolas, monospace" font-size="13" fill="#d9f0ff">shasum sentinel.txt</text>
+    <text x="696" y="334" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Сверяйте факт, а не обещание.</text>
+    <text x="696" y="356" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Проверка ищет и лишнее, и пропуск.</text>
+    <text x="696" y="384" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">Результат записывается в журнал.</text>
+  </g>
+
+  <path d="M330 260 H355" stroke="#17324d" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M645 260 H670" stroke="#17324d" stroke-width="3" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#17324d"/>
+    </marker>
+  </defs>
+
+  <g>
+    <rect x="40" y="442" width="920" height="140" rx="14" fill="#fdecee" stroke="#b00020" stroke-width="2" stroke-dasharray="8 6"/>
+    <text x="64" y="478" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#8a0018">Вне области — по умолчанию запрещено</text>
+    <text x="64" y="508" font-family="Arial, sans-serif" font-size="15" fill="#5b1a24">запись, перемещение и удаление файлов вне рабочей папки · git config --global</text>
+    <text x="64" y="532" font-family="Arial, sans-serif" font-size="15" fill="#5b1a24">установка пакетов · сеть и публикация · секреты и личные данные</text>
+    <text x="64" y="564" font-family="Arial, sans-serif" font-size="15" fill="#5b1a24">Если действие не описано в карточке — отклоните его, запишите причину и спросите преподавателя.</text>
+  </g>
+  <text x="40" y="600" font-family="Arial, sans-serif" font-size="12" fill="#7b8790">Условная учебная схема. Не снимок интерфейса OpenCode или Codex.</text>
+</svg>

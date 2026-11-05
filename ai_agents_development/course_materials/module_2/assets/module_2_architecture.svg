@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="mod2Title mod2Desc">
+  <title id="mod2Title">Архитектура Модуля 2: от первого сравнения к библиотеке проверенных промптов</title>
+  <desc id="mod2Desc">Схема показывает последовательность четырёх занятий модуля 2 (L05 Контракт задачи, L06 Ограничения и примеры, L07 Декомпозиция, L08 Оценка промптов), вход из модуля 1 (L04) и выход в модуль 3 (L09) и итоговый проект (prompts/, evidence/agent-runs.md, L14, L16).</desc>
+
+  <rect width="1200" height="700" fill="#f8fafc"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="44" font-size="26" font-weight="700" fill="#0f172a">Модуль 2. Prompt Engineering: архитектура навыков и артефактов</text>
+    <text x="40" y="72" font-size="15" fill="#475569">Учебная схема маршрута L05–L08. Разделяет навыки агентной разработки и тренировочный материал по Python.</text>
+
+    <defs>
+      <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/>
+      </marker>
+      <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#0284c7"/>
+      </marker>
+    </defs>
+
+    <!-- Input from L01-L04 -->
+    <rect x="40" y="110" width="170" height="240" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="125" y="142" text-anchor="middle" font-size="16" font-weight="700" fill="#1e293b">Вход из L01–L04</text>
+    <text x="56" y="174" font-size="13" fill="#334155">• Чистая копия снимка</text>
+    <text x="56" y="200" font-size="13" fill="#334155">• Чтение git diff / хешей</text>
+    <text x="56" y="226" font-size="13" fill="#334155">• Запуск Python 3</text>
+    <text x="56" y="252" font-size="13" fill="#334155">• Тест «до и после»</text>
+    <text x="56" y="278" font-size="13" fill="#334155">• Свежий сеанс</text>
+    <text x="56" y="304" font-size="13" fill="#334155">• Парный протокол</text>
+
+    <line x1="210" y1="230" x2="245" y2="230" stroke="#475569" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <!-- L05 -->
+    <rect x="250" y="110" width="180" height="240" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="340" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#0369a1">L05. Контракт задачи</text>
+    <text x="266" y="170" font-size="13" font-weight="700" fill="#0c4a6e">4 поля запроса:</text>
+    <text x="266" y="192" font-size="13" fill="#0f172a">1. Цель (артефакт)</text>
+    <text x="266" y="212" font-size="13" fill="#0f172a">2. Входы (источники)</text>
+    <text x="266" y="232" font-size="13" fill="#0f172a">3. Границы (запреты)</text>
+    <text x="266" y="252" font-size="13" fill="#0f172a">4. Критерии приёмки</text>
+    <rect x="264" y="274" width="152" height="58" rx="8" fill="#ffffff" stroke="#38bdf8"/>
+    <text x="340" y="296" text-anchor="middle" font-size="12" font-weight="700" fill="#0369a1">Артефакт L05:</text>
+    <text x="340" y="316" text-anchor="middle" font-size="12" fill="#334155">Запрос + чек-лист + приёмка</text>
+
+    <line x1="430" y1="230" x2="465" y2="230" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrBlue)"/>
+
+    <!-- L06 -->
+    <rect x="470" y="110" width="180" height="240" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="560" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#15803d">L06. Ограничения</text>
+    <text x="560" y="160" text-anchor="middle" font-size="16" font-weight="700" fill="#15803d">и примеры</text>
+    <text x="486" y="188" font-size="13" fill="#0f172a">• Смысл ≠ Форма подачи</text>
+    <text x="486" y="210" font-size="13" fill="#0f172a">• Измеримый лимит</text>
+    <text x="486" y="232" font-size="13" fill="#0f172a">• Доступность терминов</text>
+    <text x="486" y="254" font-size="13" fill="#0f172a">• Запуск кода на Python 3</text>
+    <rect x="484" y="274" width="152" height="58" rx="8" fill="#ffffff" stroke="#4ade80"/>
+    <text x="560" y="296" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">Артефакт L06:</text>
+    <text x="560" y="316" text-anchor="middle" font-size="12" fill="#334155">Версии A/B + вывод кода</text>
+
+    <line x1="650" y1="230" x2="685" y2="230" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrBlue)"/>
+
+    <!-- L07 -->
+    <rect x="690" y="110" width="180" height="240" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="780" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#b45309">L07. Декомпозиция</text>
+    <text x="706" y="172" font-size="13" fill="#0f172a">• 3–5 шагов с выходом</text>
+    <text x="706" y="194" font-size="13" fill="#0f172a">• Зависимости без циклов</text>
+    <text x="706" y="216" font-size="13" fill="#0f172a">• Шов «выход 1 → вход 2»</text>
+    <text x="706" y="238" font-size="13" fill="#0f172a">• Стоп-правило после шага 1</text>
+    <rect x="704" y="274" width="152" height="58" rx="8" fill="#ffffff" stroke="#fbbf24"/>
+    <text x="780" y="296" text-anchor="middle" font-size="12" font-weight="700" fill="#b45309">Артефакт L07:</text>
+    <text x="780" y="316" text-anchor="middle" font-size="12" fill="#334155">План + проверенный шаг 1</text>
+
+    <line x1="870" y1="230" x2="905" y2="230" stroke="#0284c7" stroke-width="2.5" marker-end="url(#arrBlue)"/>
+
+    <!-- L08 -->
+    <rect x="910" y="110" width="250" height="240" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="1035" y="140" text-anchor="middle" font-size="16" font-weight="700" fill="#6d28d9">L08. Оценка промптов</text>
+    <text x="926" y="172" font-size="13" fill="#0f172a">• Матрица 2×2 (OpenCode/Codex × A/B)</text>
+    <text x="926" y="194" font-size="13" fill="#0f172a">• Один изменяемый фактор (B = A + 1 строка)</text>
+    <text x="926" y="216" font-size="13" fill="#0f172a">• Полнота, корректность, проверяемость</text>
+    <text x="926" y="238" font-size="13" fill="#0f172a">• Пределы вывода и учёт сбоев</text>
+    <rect x="926" y="274" width="218" height="58" rx="8" fill="#ffffff" stroke="#a78bfa"/>
+    <text x="1035" y="296" text-anchor="middle" font-size="12" font-weight="700" fill="#6d28d9">Артефакт L08:</text>
+    <text x="1035" y="316" text-anchor="middle" font-size="12" fill="#334155">Матрица 4 попыток + выбор промпта</text>
+
+    <!-- Two tracks explanation box -->
+    <rect x="40" y="390" width="1120" height="125" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="60" y="420" font-size="17" font-weight="700" fill="#0f172a">Два уровня работы в Модуле 2 (не смешивать при проверке):</text>
+    <rect x="60" y="436" width="520" height="62" rx="8" fill="#f0f9ff" stroke="#0284c7"/>
+    <text x="76" y="458" font-size="14" font-weight="700" fill="#0369a1">1. Навык участника курса агентной разработки (главная цель):</text>
+    <text x="76" y="480" font-size="13" fill="#334155">Контракт, ограничения, декомпозиция, матрица 2×2, проверка свидетельств и границ.</text>
+
+    <rect x="610" y="436" width="530" height="62" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+    <text x="626" y="458" font-size="14" font-weight="700" fill="#15803d">2. Тренировочный предметный материал (сквозной проект Python):</text>
+    <text x="626" y="480" font-size="13" fill="#334155">Короткие фрагменты и упражнения о строковых переменных и print (до 120–200 слов).</text>
+
+    <!-- Output to Module 3 and Final Project -->
+    <rect x="40" y="545" width="1120" height="115" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+    <text x="60" y="577" font-size="17" font-weight="700" fill="#92400e">Выход Модуля 2 → Библиотека проверенных промптов и переход к Модулю 3 и итоговому проекту:</text>
+    <text x="60" y="605" font-size="14" fill="#78350f">• Для L09–L12 (Context Engineering): проверенные контракты и критерии используются при отборе источников и правил AGENTS.md.</text>
+    <text x="60" y="630" font-size="14" fill="#78350f">• Для L14, L16 и L24 (Итоговый проект): папка prompts/ (не менее 3 промптов с входами и критериями) и журнал evidence/agent-runs.md.</text>
+  </g>
+</svg>

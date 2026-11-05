@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640" role="img" aria-labelledby="title desc">
+  <title id="title">L01: карта свидетельств и приёмки</title>
+  <desc id="desc">Закрытая схема преподавателя связывает четыре результата обучения L01 со свидетельствами в артефактах и направлениями рубрики A–D.</desc>
+  <rect width="1100" height="640" fill="#ffffff"/>
+  <text x="40" y="46" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#17324d">L01: карта свидетельств и приёмки</text>
+  <text x="40" y="74" font-family="Arial, sans-serif" font-size="15" fill="#5b6770">Материал преподавателя. Студенту не выдавать.</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="40" y="102" width="300" height="70" rx="10" fill="#eaf1f8" stroke="#1f4e79" stroke-width="1.5"/>
+    <text x="58" y="130" font-size="15" font-weight="700" fill="#17324d">1. Область и границы</text>
+    <text x="58" y="154" font-size="13" fill="#5b6770">называет разрешённое и запрещённое</text>
+
+    <rect x="40" y="188" width="300" height="70" rx="10" fill="#eaf1f8" stroke="#1f4e79" stroke-width="1.5"/>
+    <text x="58" y="216" font-size="15" font-weight="700" fill="#17324d">2. Разрешение или отказ</text>
+    <text x="58" y="240" font-size="13" fill="#5b6770">фиксирует событие и причину</text>
+
+    <rect x="40" y="274" width="300" height="70" rx="10" fill="#eaf1f8" stroke="#1f4e79" stroke-width="1.5"/>
+    <text x="58" y="302" font-size="15" font-weight="700" fill="#17324d">3. Дерево и первый коммит</text>
+    <text x="58" y="326" font-size="13" fill="#5b6770">проверяет status и log</text>
+
+    <rect x="40" y="360" width="300" height="70" rx="10" fill="#eaf1f8" stroke="#1f4e79" stroke-width="1.5"/>
+    <text x="58" y="388" font-size="15" font-weight="700" fill="#17324d">4. Сравнение и предел</text>
+    <text x="58" y="412" font-size="13" fill="#5b6770">одинаковые условия, ограниченный вывод</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="400" y="102" width="320" height="70" rx="10" fill="#fbe9dd" stroke="#c55a11" stroke-width="1.5"/>
+    <text x="418" y="130" font-size="14" font-weight="700" fill="#17324d">notes/permissions.md + journal-L01.md</text>
+    <text x="418" y="154" font-size="13" fill="#5b6770">область, запросы, решения, инциденты</text>
+
+    <rect x="400" y="188" width="320" height="70" rx="10" fill="#fbe9dd" stroke="#c55a11" stroke-width="1.5"/>
+    <text x="418" y="216" font-size="14" font-weight="700" fill="#17324d">запись «запрошено → решение»</text>
+    <text x="418" y="240" font-size="13" fill="#5b6770">минимум одно событие или «запросов не было»</text>
+
+    <rect x="400" y="274" width="320" height="70" rx="10" fill="#fbe9dd" stroke="#c55a11" stroke-width="1.5"/>
+    <text x="418" y="302" font-size="14" font-weight="700" fill="#17324d">find + git status + git log</text>
+    <text x="418" y="326" font-size="13" fill="#5b6770">ровно шесть файлов, чистый статус, сообщение</text>
+
+    <rect x="400" y="360" width="320" height="70" rx="10" fill="#fbe9dd" stroke="#c55a11" stroke-width="1.5"/>
+    <text x="418" y="388" font-size="14" font-weight="700" fill="#17324d">таблица сравнения</text>
+    <text x="418" y="412" font-size="13" fill="#5b6770">снимок, запрос, порядок, различия, вывод</text>
+  </g>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="760" y="102" width="300" height="70" rx="10" fill="#eef6ee" stroke="#2e6b3a" stroke-width="1.5"/>
+    <text x="778" y="130" font-size="14" font-weight="700" fill="#17324d">A. Границы и безопасность</text>
+    <text x="778" y="154" font-size="13" fill="#5b6770">область, разрешения, отсутствие следов</text>
+
+    <rect x="760" y="188" width="300" height="70" rx="10" fill="#eef6ee" stroke="#2e6b3a" stroke-width="1.5"/>
+    <text x="778" y="216" font-size="14" font-weight="700" fill="#17324d">A / C. Свидетельство решения</text>
+    <text x="778" y="240" font-size="13" fill="#5b6770">запрос, решение, причина, проверка</text>
+
+    <rect x="760" y="274" width="300" height="70" rx="10" fill="#eef6ee" stroke="#2e6b3a" stroke-width="1.5"/>
+    <text x="778" y="302" font-size="14" font-weight="700" fill="#17324d">B / C. Результат и проверка</text>
+    <text x="778" y="326" font-size="13" fill="#5b6770">дерево, коммит, чистый статус</text>
+
+    <rect x="760" y="360" width="300" height="70" rx="10" fill="#eef6ee" stroke="#2e6b3a" stroke-width="1.5"/>
+    <text x="778" y="388" font-size="14" font-weight="700" fill="#17324d">D. Сравнение и обоснование</text>
+    <text x="778" y="412" font-size="13" fill="#5b6770">один фактор, факты, предел вывода</text>
+  </g>
+
+  <defs>
+    <marker id="arrow3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#17324d"/>
+    </marker>
+  </defs>
+  <g stroke="#17324d" stroke-width="2" marker-end="url(#arrow3)">
+    <path d="M340 137 H400"/>
+    <path d="M340 223 H400"/>
+    <path d="M340 309 H400"/>
+    <path d="M340 395 H400"/>
+    <path d="M720 137 H760"/>
+    <path d="M720 223 H760"/>
+    <path d="M720 309 H760"/>
+    <path d="M720 395 H760"/>
+  </g>
+
+  <g>
+    <rect x="40" y="470" width="1020" height="130" rx="12" fill="#fdecee" stroke="#b00020" stroke-width="1.5"/>
+    <text x="60" y="500" font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#8a0018">Блокеры L01</text>
+    <text x="60" y="526" font-family="Arial, sans-serif" font-size="14" fill="#5b1a24">выход за область не обнаружен и не записан · нет дерева, коммита или журнала · журнал приписывает агенту ручную правку ·</text>
+    <text x="60" y="550" font-family="Arial, sans-serif" font-size="14" fill="#5b1a24">недоказуемый результат · опасное действие без безопасной процедуры · студент не может показать границу изменений.</text>
+    <text x="60" y="580" font-family="Arial, sans-serif" font-size="13" fill="#5b1a24">Скрипт check_structure.py проверяет дерево и коммит; журнал, решения и сравнение проверяет человек по рубрике.</text>
+  </g>
+  <text x="40" y="626" font-family="Arial, sans-serif" font-size="12" fill="#7b8790">Закрытая схема преподавателя. Не входит в ученический снимок.</text>
+</svg>

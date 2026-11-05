@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720" role="img" aria-labelledby="l06Title l06Desc">
+  <title id="l06Title">L06: Четыре слоя учебного фрагмента и защита от утечки содержания из образца</title>
+  <desc id="l06Desc">Схема показывает четыре слоя: форма (от образцов подачи), неизменяемый смысл (из черновика), проверяемая рамка (ограничения объёма, терминов и области) и свидетельство запуска на Python 3. Справа показан контрпример утечки чужого значения из образца.</desc>
+
+  <rect width="1100" height="720" fill="#fbfbf8"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="36" y="42" font-size="24" font-weight="700" fill="#1f2937">L06. Ограничения и примеры: четыре слоя проверки и типичная ловушка</text>
+    <text x="36" y="68" font-size="15" fill="#4b5563">Учебная схема. Разделяет переносимую структуру образца и неизменяемые факты черновика.</text>
+
+    <!-- Layer 1: Form -->
+    <rect x="36" y="96" width="660" height="120" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="56" y="126" font-size="17" font-weight="700" fill="#1e3a8a">1. СЛОЙ ФОРМЫ (источник: samples.md — только скелет подачи)</text>
+    <text x="56" y="154" font-size="14" fill="#1e40af">• Версия A (Образец 1): короткое объяснение → код → действие ученика</text>
+    <text x="56" y="178" font-size="14" fill="#1e40af">• Версия B (Образец 2): вопрос на предсказание → код → запуск и сверка</text>
+    <text x="56" y="202" font-size="13" font-weight="700" fill="#1d4ed8">Что меняется между A и B: только порядок педагогических шагов.</text>
+
+    <!-- Layer 2: Meaning -->
+    <rect x="36" y="236" width="660" height="120" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="56" y="266" font-size="17" font-weight="700" fill="#14532d">2. СЛОЙ СМЫСЛА (источник: черновик / бриф — нельзя менять)</text>
+    <text x="56" y="294" font-size="14" fill="#166534">• Факт 1: переменная позволяет обратиться к значению по имени</text>
+    <text x="56" y="318" font-size="14" fill="#166534">• Факт 2: конкретное имя переменной и присваиваемая строка (в демо: animal = "кот")</text>
+    <text x="56" y="342" font-size="14" fill="#166534">• Факт 3: вызов print(...) выводит точную строку (в демо: кот)</text>
+
+    <!-- Layer 3: Constraints -->
+    <rect x="36" y="376" width="660" height="120" rx="12" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="56" y="406" font-size="17" font-weight="700" fill="#78350f">3. СЛОЙ РАМКИ (измеримые ограничения: единица + метод + порог)</text>
+    <text x="56" y="434" font-size="14" fill="#92400e">• Объём: ≤ 120 слов на каждую версию без учёта блоков кода</text>
+    <text x="56" y="458" font-size="14" fill="#92400e">• Термины: 0 неоговорённых терминов (каждый новый термин пояснён при 1-м вводе)</text>
+    <text x="56" y="482" font-size="14" fill="#92400e">• Область: файлы снимка только для чтения (проверка хешей SHA-256 / git status)</text>
+
+    <!-- Layer 4: Execution -->
+    <rect x="36" y="516" width="660" height="150" rx="12" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="56" y="546" font-size="17" font-weight="700" fill="#4c1d95">4. СЛОЙ СВИДЕТЕЛЬСТВА (исполняемый пример на Python 3)</text>
+    <text x="56" y="574" font-size="14" fill="#5b21b6">1. Осмотр кода до запуска: только показанное присваивание и print (без сети/файлов)</text>
+    <text x="56" y="598" font-size="14" fill="#5b21b6">2. Фиксация ожидаемого вывода до запуска (защита от подгонки)</text>
+    <text x="56" y="622" font-size="14" fill="#5b21b6">3. Запуск во временном файле вне снимка: python3 -B example_a.py</text>
+    <text x="56" y="646" font-size="14" font-weight="700" fill="#4c1d95">4. Посимвольная сверка фактического вывода с ожидаемым для задачи</text>
+
+    <!-- Right panel: Trap vs Correct -->
+    <rect x="726" y="96" width="338" height="270" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="895" y="128" text-anchor="middle" font-size="16" font-weight="700" fill="#991b1b">Типичный дефект: утечка образца</text>
+    <text x="744" y="156" font-size="13" fill="#7f1d1d">В образце формы было:</text>
+    <text x="744" y="178" font-family="Menlo, Consolas, monospace" font-size="13" fill="#991b1b">city = "Москва"</text>
+    <text x="744" y="198" font-family="Menlo, Consolas, monospace" font-size="13" fill="#991b1b">print(city)</text>
+    <text x="744" y="228" font-size="13" fill="#7f1d1d">Агент перенёс city в ответ вместо</text>
+    <text x="744" y="248" font-size="13" fill="#7f1d1d">фактов из черновика.</text>
+    <text x="744" y="278" font-size="13" font-weight="700" fill="#991b1b">Почему опасен:</text>
+    <text x="744" y="298" font-size="13" fill="#7f1d1d">Код запускается без ошибок (выводит</text>
+    <text x="744" y="318" font-size="13" fill="#7f1d1d">Москва), но нарушает смысл задачи!</text>
+    <text x="744" y="344" font-size="12" font-weight="700" fill="#dc2626">Вердикт: НЕ ПРИНЯТО (искажён смысл)</text>
+
+    <rect x="726" y="390" width="338" height="276" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="895" y="422" text-anchor="middle" font-size="16" font-weight="700" fill="#166534">Учебный график подсчёта слов</text>
+    <text x="744" y="444" font-size="12" fill="#475569">Порог: ≤ 120 слов без кода (демо L06)</text>
+    <line x1="744" y1="590" x2="1040" y2="590" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Threshold line -->
+    <line x1="744" y1="470" x2="1040" y2="470" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="1042" y="474" text-anchor="end" font-size="11" font-weight="700" fill="#dc2626">Лимит: 120 слов</text>
+
+    <!-- Bars -->
+    <rect x="765" y="544" width="60" height="46" fill="#22c55e" rx="4"/>
+    <text x="795" y="536" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">46 слов</text>
+    <text x="795" y="610" text-anchor="middle" font-size="12" fill="#1e293b">Версия A</text>
+
+    <rect x="855" y="538" width="60" height="52" fill="#22c55e" rx="4"/>
+    <text x="885" y="530" text-anchor="middle" font-size="12" font-weight="700" fill="#15803d">52 слова</text>
+    <text x="885" y="610" text-anchor="middle" font-size="12" fill="#1e293b">Версия B</text>
+
+    <rect x="945" y="452" width="60" height="138" fill="#ef4444" rx="4"/>
+    <text x="975" y="444" text-anchor="middle" font-size="12" font-weight="700" fill="#b91c1c">138 слов</text>
+    <text x="975" y="610" text-anchor="middle" font-size="12" fill="#1e293b">Перегруз</text>
+
+    <text x="744" y="644" font-size="12" fill="#334155">Единый метод: удалить блоки ```...```,</text>
+    <text x="744" y="660" font-size="12" fill="#334155">посчитать непробельные токены отдельно.</text>
+  </g>
+</svg>

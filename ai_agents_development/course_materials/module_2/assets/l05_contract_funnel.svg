@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="680" viewBox="0 0 1100 680" role="img" aria-labelledby="l05Title l05Desc">
+  <title id="l05Title">L05: Воронка контракта задачи и учебная диаграмма снижения неопределённости</title>
+  <desc id="l05Desc">В верхней части расплывчатая заявка проходит через четыре фильтра контракта (цель, входы, границы, критерии готовности), превращаясь в проверяемый результат. В нижней части показан учебный условный график: как каждое добавленное поле сокращает число непроверяемых догадок агента.</desc>
+
+  <rect width="1100" height="680" fill="#fbfbfd"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="42" font-size="24" font-weight="700" fill="#0f172a">L05. Контракт задачи: четыре фильтра против догадок по умолчанию</text>
+    <text x="40" y="68" font-size="15" fill="#475569">Учебная схема и условная диаграмма. Показывают, почему пропущенное поле становится молчаливым решением агента.</text>
+
+    <!-- Top part: Funnel -->
+    <rect x="40" y="95" width="190" height="230" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="6 4" stroke-width="2"/>
+    <text x="135" y="125" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">Расплывчатая заявка</text>
+    <text x="135" y="148" text-anchor="middle" font-size="13" fill="#64748b">«Сделай понятно»</text>
+    <g fill="#94a3b8">
+      <circle cx="75" cy="180" r="5"/><circle cx="115" cy="175" r="4"/><circle cx="155" cy="185" r="5"/><circle cx="195" cy="178" r="4"/>
+      <circle cx="85" cy="215" r="4"/><circle cx="125" cy="220" r="5"/><circle cx="165" cy="210" r="4"/><circle cx="190" cy="225" r="5"/>
+      <circle cx="70" cy="255" r="5"/><circle cx="110" cy="260" r="4"/><circle cx="150" cy="250" r="5"/><circle cx="185" cy="262" r="4"/>
+    </g>
+    <text x="135" y="302" text-anchor="middle" font-size="12" fill="#475569">десятки трактовок</text>
+
+    <!-- 4 Filters -->
+    <rect x="265" y="115" width="130" height="190" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="330" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">1. Цель</text>
+    <text x="330" y="170" text-anchor="middle" font-size="12" fill="#0f172a">Какой артефакт?</text>
+    <text x="330" y="190" text-anchor="middle" font-size="12" fill="#0f172a">Для кого?</text>
+    <text x="330" y="210" text-anchor="middle" font-size="12" fill="#0f172a">Что позволит</text>
+    <text x="330" y="228" text-anchor="middle" font-size="12" fill="#0f172a">сделать ученику?</text>
+    <text x="330" y="280" text-anchor="middle" font-size="11" fill="#0369a1">Отсекает: лекции</text>
+
+    <rect x="425" y="115" width="130" height="190" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="490" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">2. Входы</text>
+    <text x="490" y="170" text-anchor="middle" font-size="12" fill="#0f172a">Какие файлы?</text>
+    <text x="490" y="190" text-anchor="middle" font-size="12" fill="#0f172a">Какая роль?</text>
+    <text x="490" y="210" text-anchor="middle" font-size="12" fill="#0f172a">Что исключено?</text>
+    <text x="490" y="280" text-anchor="middle" font-size="11" fill="#0369a1">Отсекает: домыслы</text>
+
+    <rect x="585" y="115" width="130" height="190" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="650" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">3. Границы</text>
+    <text x="650" y="170" text-anchor="middle" font-size="12" fill="#0f172a">Только чтение?</text>
+    <text x="650" y="190" text-anchor="middle" font-size="12" fill="#0f172a">Формат ответа?</text>
+    <text x="650" y="210" text-anchor="middle" font-size="12" fill="#0f172a">Запрет понятий?</text>
+    <text x="650" y="280" text-anchor="middle" font-size="11" fill="#0369a1">Отсекает: правки снимка</text>
+
+    <rect x="745" y="115" width="130" height="190" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="810" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">4. Критерии</text>
+    <text x="810" y="170" text-anchor="middle" font-size="12" fill="#0f172a">Наблюдаемый</text>
+    <text x="810" y="188" text-anchor="middle" font-size="12" fill="#0f172a">признак,</text>
+    <text x="810" y="206" text-anchor="middle" font-size="12" fill="#0f172a">метод и порог</text>
+    <text x="810" y="280" text-anchor="middle" font-size="11" fill="#0369a1">Отсекает: «на глаз»</text>
+
+    <!-- Verified Result -->
+    <rect x="910" y="135" width="150" height="150" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="985" y="175" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">Проверяемый</text>
+    <text x="985" y="195" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">артефакт</text>
+    <circle cx="985" cy="225" r="8" fill="#16a34a"/>
+    <text x="985" y="260" text-anchor="middle" font-size="12" fill="#166534">Принять / исправить</text>
+
+    <!-- Bottom part: Quantitative chart (Educational model) -->
+    <rect x="40" y="355" width="1020" height="290" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="65" y="388" font-size="17" font-weight="700" fill="#0f172a">Учебная диаграмма: сколько решений агент принимает «молча» при пропуске полей</text>
+    <text x="65" y="410" font-size="13" fill="#64748b">Источник данных: условная педагогическая модель (5 типовых решений в задаче L05: формат, аудитория, значения, синтаксис, проверка).</text>
+
+    <!-- Bars -->
+    <text x="65" y="452" font-size="13" fill="#1e293b">Только заявка (0 полей)</text>
+    <rect x="290" y="436" width="500" height="22" rx="4" fill="#ef4444"/>
+    <text x="802" y="452" font-size="13" font-weight="700" fill="#b91c1c">5 из 5 решений — догадки агента (высокий риск отказа)</text>
+
+    <text x="65" y="492" font-size="13" fill="#1e293b">+ Цель (1 поле)</text>
+    <rect x="290" y="476" width="400" height="22" rx="4" fill="#f97316"/>
+    <text x="702" y="492" font-size="13" fill="#c2410c">4 из 5 — агент сам выбирает файлы, термины и способ проверки</text>
+
+    <text x="65" y="532" font-size="13" fill="#1e293b">+ Входы (2 поля)</text>
+    <rect x="290" y="516" width="260" height="22" rx="4" fill="#eab308"/>
+    <text x="562" y="532" font-size="13" fill="#a16207">2–3 из 5 — возможны правки снимка и лишние конструкции (f-строки)</text>
+
+    <text x="65" y="572" font-size="13" fill="#1e293b">+ Границы (3 поля)</text>
+    <rect x="290" y="556" width="130" height="22" rx="4" fill="#38bdf8"/>
+    <text x="432" y="572" font-size="13" fill="#0369a1">1 из 5 — область защищена, но нет точного порога приёмки</text>
+
+    <text x="65" y="612" font-size="13" font-weight="700" fill="#14532d">Полный контракт (4 поля)</text>
+    <rect x="290" y="596" width="24" height="22" rx="4" fill="#22c55e"/>
+    <text x="326" y="612" font-size="13" font-weight="700" fill="#15803d">0 скрытых обязательных решений: свободна только разрешённая форма фразы</text>
+  </g>
+</svg>

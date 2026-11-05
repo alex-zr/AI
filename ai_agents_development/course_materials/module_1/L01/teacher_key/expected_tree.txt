@@ -1,0 +1,6 @@
+README.md
+.gitignore
+notes/permissions.md
+notes/session-log.md
+src/.gitkeep
+tests/.gitkeep

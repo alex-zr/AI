@@ -1,0 +1,2 @@
+label = "синий"
+print(label)

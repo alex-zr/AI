@@ -1,0 +1,55 @@
+python3 -B course_materials/module_6/L22/teacher_key/check_example.py course_materials/module_6/L22/snapshot/example.py -v
+exit=0
+test_at_threshold (__main__.OutputTests) ... ok
+test_below_threshold (__main__.OutputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.025s
+
+OK
+
+python3 -B course_materials/module_6/L22/teacher_key/check_example.py course_materials/module_6/L22/teacher_key/control_error.py -v
+exit=1
+test_at_threshold (__main__.OutputTests) ... FAIL
+test_below_threshold (__main__.OutputTests) ... ok
+
+======================================================================
+FAIL: test_at_threshold (__main__.OutputTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/al1/Library/CloudStorage/Dropbox/cources/dan.it/ai_agents_development/course_materials/module_6/L22/teacher_key/check_example.py", line 26, in test_at_threshold
+    self.check_output_for(5, "достаточно\n")
+  File "/Users/al1/Library/CloudStorage/Dropbox/cources/dan.it/ai_agents_development/course_materials/module_6/L22/teacher_key/check_example.py", line 20, in check_output_for
+    self.assertEqual(actual, expected, f"Неверный вывод при amount={amount}")
+AssertionError: 'мало\n' != 'достаточно\n'
+- мало
++ достаточно
+ : Неверный вывод при amount=5
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.026s
+
+FAILED (failures=1)
+
+python3 -B course_materials/module_6/L22/teacher_key/check_example.py course_materials/module_6/L23/snapshot/example.py -v
+exit=1
+test_at_threshold (__main__.OutputTests) ... FAIL
+test_below_threshold (__main__.OutputTests) ... ok
+
+======================================================================
+FAIL: test_at_threshold (__main__.OutputTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/al1/Library/CloudStorage/Dropbox/cources/dan.it/ai_agents_development/course_materials/module_6/L22/teacher_key/check_example.py", line 26, in test_at_threshold
+    self.check_output_for(5, "достаточно\n")
+  File "/Users/al1/Library/CloudStorage/Dropbox/cources/dan.it/ai_agents_development/course_materials/module_6/L22/teacher_key/check_example.py", line 20, in check_output_for
+    self.assertEqual(actual, expected, f"Неверный вывод при amount={amount}")
+AssertionError: 'мало\n' != 'достаточно\n'
+- мало
++ достаточно
+ : Неверный вывод при amount=5
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.025s
+
+FAILED (failures=1)

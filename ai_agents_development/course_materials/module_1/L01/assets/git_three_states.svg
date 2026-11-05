@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500" role="img" aria-labelledby="title desc">
+  <title id="title">Git: рабочая папка, индекс и история</title>
+  <desc id="desc">Схема показывает переход файлов из рабочей папки в индекс командой git add и в историю командой git commit, а также команды проверки состояния.</desc>
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <text x="40" y="46" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#17324d">Git: три состояния и проверка</text>
+  <text x="40" y="74" font-family="Arial, sans-serif" font-size="16" fill="#5b6770">Коммит фиксирует выбранные изменения, но не доказывает правильность содержимого</text>
+
+  <g>
+    <rect x="40" y="112" width="240" height="150" rx="14" fill="#eaf1f8" stroke="#1f4e79" stroke-width="2"/>
+    <text x="60" y="146" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">Рабочая папка</text>
+    <path d="M62 170 h30 v8 h22 v54 h-52 z" fill="#ffffff" stroke="#1f4e79" stroke-width="1.5"/>
+    <path d="M62 186 h52 M62 202 h52 M62 218 h40" stroke="#1f4e79" stroke-width="1.2"/>
+    <text x="132" y="196" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">ваши файлы</text>
+    <text x="132" y="218" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">и правки</text>
+  </g>
+
+  <g>
+    <rect x="380" y="112" width="240" height="150" rx="14" fill="#fbe9dd" stroke="#c55a11" stroke-width="2"/>
+    <text x="400" y="146" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">Индекс</text>
+    <rect x="402" y="170" width="72" height="58" rx="4" fill="#ffffff" stroke="#c55a11" stroke-width="1.5"/>
+    <path d="M414 188 h48 M414 202 h48 M414 216 h32" stroke="#c55a11" stroke-width="1.2"/>
+    <text x="492" y="196" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">выбрано</text>
+    <text x="492" y="218" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">для коммита</text>
+  </g>
+
+  <g>
+    <rect x="720" y="112" width="240" height="150" rx="14" fill="#eef6ee" stroke="#2e6b3a" stroke-width="2"/>
+    <text x="740" y="146" font-family="Arial, sans-serif" font-size="19" font-weight="700" fill="#17324d">История</text>
+    <circle cx="762" cy="198" r="16" fill="#2e6b3a"/>
+    <path d="M778 198 h74" stroke="#2e6b3a" stroke-width="2"/>
+    <circle cx="852" cy="198" r="8" fill="#2e6b3a"/>
+    <text x="800" y="180" font-family="Arial, sans-serif" font-size="12" fill="#5b6770">снимок</text>
+    <text x="800" y="226" font-family="Arial, sans-serif" font-size="14" fill="#5b6770">коммит с сообщением</text>
+  </g>
+
+  <defs>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#17324d"/>
+    </marker>
+  </defs>
+  <path d="M280 187 H380" stroke="#17324d" stroke-width="3" marker-end="url(#arrow2)"/>
+  <path d="M620 187 H720" stroke="#17324d" stroke-width="3" marker-end="url(#arrow2)"/>
+  <text x="288" y="176" font-family="Menlo, Consolas, monospace" font-size="14" fill="#17324d">git add</text>
+  <text x="618" y="176" font-family="Menlo, Consolas, monospace" font-size="14" fill="#17324d">git commit</text>
+
+  <g>
+    <rect x="40" y="302" width="280" height="92" rx="10" fill="#f5f7f9" stroke="#b8c2cc" stroke-width="1.5"/>
+    <text x="58" y="330" font-family="Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#17324d">git status</text>
+    <text x="58" y="354" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">Что изменено, добавлено</text>
+    <text x="58" y="374" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">или ещё не отслеживается</text>
+  </g>
+  <g>
+    <rect x="340" y="302" width="300" height="92" rx="10" fill="#f5f7f9" stroke="#b8c2cc" stroke-width="1.5"/>
+    <text x="358" y="330" font-family="Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#17324d">git diff / --cached</text>
+    <text x="358" y="354" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">Что ещё не в индексе /</text>
+    <text x="358" y="374" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">что уже войдёт в коммит</text>
+  </g>
+  <g>
+    <rect x="660" y="302" width="300" height="92" rx="10" fill="#f5f7f9" stroke="#b8c2cc" stroke-width="1.5"/>
+    <text x="678" y="330" font-family="Menlo, Consolas, monospace" font-size="14" font-weight="700" fill="#17324d">git log --oneline</text>
+    <text x="678" y="354" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">Какие снимки уже есть</text>
+    <text x="678" y="374" font-family="Arial, sans-serif" font-size="13" fill="#5b6770">в истории репозитория</text>
+  </g>
+
+  <g>
+    <rect x="40" y="418" width="920" height="56" rx="10" fill="#eaf1f8" stroke="#1f4e79" stroke-width="1.5"/>
+    <text x="60" y="444" font-family="Menlo, Consolas, monospace" font-size="15" font-weight="700" fill="#17324d">git status --porcelain</text>
+    <text x="270" y="444" font-family="Arial, sans-serif" font-size="14" fill="#17324d">пустой вывод = незафиксированных изменений нет. Это проверка чистоты, а не оценка качества.</text>
+  </g>
+  <text x="40" y="492" font-family="Arial, sans-serif" font-size="12" fill="#7b8790">Условная учебная схема. Не снимок интерфейса.</text>
+</svg>

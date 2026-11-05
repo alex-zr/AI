@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="stepHandoffTitle stepHandoffDesc">
+  <title id="stepHandoffTitle">Шов передачи между шагами плана</title>
+  <desc id="stepHandoffDesc">Верхняя часть схемы показывает совпадение: выход первого шага содержит два результата, каркас и ограничения, и второй шаг получает ровно эти данные. Нижняя часть показывает разрыв: второй шаг требует готовый проверенный пример, которого первый шаг не произвёл. Внизу дан способ исправления: изменить выход первого шага, изменить вход второго шага или добавить отдельный шаг.</desc>
+
+  <rect width="1200" height="760" fill="#fbfbfd"/>
+
+  <text x="60" y="52" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#1f2937">Шов передачи: выход шага → вход следующего</text>
+  <text x="60" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#4b5563">Учебная схема. Не снимок интерфейса OpenCode или Codex. Проверяется не «план понятен», а совпадение артефактов.</text>
+
+  <!-- Upper lane: match -->
+  <text x="60" y="128" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#2e7d32">1. Совпало: вход следующего шага обеспечен</text>
+
+  <rect x="60" y="150" width="270" height="150" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="195" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1b5e20">Шаг 1. Выход</text>
+  <text x="82" y="212" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• два результата обучения</text>
+  <text x="82" y="240" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• каркас из 4 разделов</text>
+  <text x="82" y="268" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• ограничения из brief</text>
+
+  <rect x="380" y="150" width="250" height="150" rx="12" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+  <text x="505" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#0d47a1">Проверка шага 1</text>
+  <text x="402" y="212" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• результат — действие</text>
+  <text x="402" y="240" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• 4 раздела на месте</text>
+  <text x="402" y="268" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• лимит назван и проверен</text>
+
+  <rect x="700" y="150" width="250" height="150" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+  <text x="825" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#1b5e20">Шаг 2. Вход</text>
+  <text x="722" y="212" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• те же результаты</text>
+  <text x="722" y="240" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• тот же каркас</text>
+  <text x="722" y="268" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• те же ограничения</text>
+
+  <rect x="1000" y="150" width="160" height="150" rx="12" fill="#ffffff" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="1080" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" fill="#2e7d32">✓ Шов</text>
+  <text x="1080" y="212" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#1f2937">тип совпал</text>
+  <text x="1080" y="238" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#1f2937">обязательные поля</text>
+  <text x="1080" y="264" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#1f2937">есть</text>
+
+  <line x1="330" y1="225" x2="372" y2="225" stroke="#1565c0" stroke-width="3"/>
+  <polygon points="372,225 360,218 360,232" fill="#1565c0"/>
+  <line x1="630" y1="225" x2="692" y2="225" stroke="#2e7d32" stroke-width="3"/>
+  <polygon points="692,225 680,218 680,232" fill="#2e7d32"/>
+  <line x1="950" y1="225" x2="992" y2="225" stroke="#2e7d32" stroke-width="3"/>
+  <polygon points="992,225 980,218 980,232" fill="#2e7d32"/>
+
+  <!-- Lower lane: mismatch -->
+  <text x="60" y="360" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" fill="#c62828">2. Разрыв: шаг 2 требует то, чего шаг 1 не произвёл</text>
+
+  <rect x="60" y="382" width="270" height="150" rx="12" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="195" y="412" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#8e0000">Шаг 1. Выход</text>
+  <text x="82" y="444" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• два результата</text>
+  <text x="82" y="472" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• больше ничего</text>
+
+  <rect x="380" y="382" width="250" height="150" rx="12" fill="#fff3e0" stroke="#ef6c00" stroke-width="2"/>
+  <text x="505" y="412" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#e65100">Проверка шва</text>
+  <text x="402" y="444" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• тип: нет</text>
+  <text x="402" y="472" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• поле: нет</text>
+  <text x="402" y="500" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• статус: не создан</text>
+
+  <rect x="700" y="382" width="270" height="150" rx="12" fill="#ffebee" stroke="#c62828" stroke-width="2"/>
+  <text x="835" y="412" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#8e0000">Шаг 2. Вход</text>
+  <text x="722" y="444" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• готовый проверенный пример</text>
+  <text x="722" y="472" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">• ожидаемый вывод</text>
+
+  <line x1="330" y1="457" x2="372" y2="457" stroke="#c62828" stroke-width="3" stroke-dasharray="8 5"/>
+  <line x1="630" y1="457" x2="692" y2="457" stroke="#c62828" stroke-width="3" stroke-dasharray="8 5"/>
+  <polygon points="692,457 680,450 680,464" fill="#c62828"/>
+
+  <text x="505" y="565" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#c62828">разрыв шва: примера нет</text>
+  <line x1="330" y1="550" x2="692" y2="550" stroke="#c62828" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="495" y1="540" x2="515" y2="560" stroke="#c62828" stroke-width="4"/>
+  <line x1="515" y1="540" x2="495" y2="560" stroke="#c62828" stroke-width="4"/>
+
+  <!-- Fix callout -->
+  <rect x="60" y="600" width="1100" height="112" rx="12" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+  <text x="82" y="632" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#374151">Исправление выбирается по смыслу, а не по удобству:</text>
+  <text x="82" y="662" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">(A) расширить выход шага 1 — добавить черновой пример;  (B) изменить вход шага 2 — пример создаётся внутри шага 2;</text>
+  <text x="82" y="690" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1f2937">(C) добавить отдельный шаг «подготовить пример». В любом случае разрыв и решение записываются в план и журнал.</text>
+</svg>

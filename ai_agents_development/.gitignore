@@ -1,0 +1,7 @@
+# Build files
+**/target
+.flattened-pom.xml
+
+# IDE generated files 
+/.idea
+*.iml

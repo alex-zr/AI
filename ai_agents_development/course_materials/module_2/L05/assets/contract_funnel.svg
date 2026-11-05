@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="620" viewBox="0 0 980 620" role="img" aria-labelledby="contractTitle contractDesc">
+  <title id="contractTitle">Контракт сужает пространство допустимых ответов</title>
+  <desc id="contractDesc">Слева расплывчатая заявка и множество возможных ответов. Поток проходит через четыре фильтра: цель, входы, границы и критерии готовности. Справа остаётся один проверяемый результат. Внизу поясняется, что пропущенное поле становится решением агента по умолчанию.</desc>
+
+  <rect width="980" height="620" fill="#fbfbfd"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="40" y="42" font-size="24" font-weight="700" fill="#0f172a">Контракт сужает пространство допустимых ответов</text>
+    <text x="40" y="70" font-size="15" fill="#475569">Каждое поле убирает решение, которое иначе агент примет за вас</text>
+
+    <circle cx="716" cy="96" r="5" fill="#94a3b8"/>
+    <text x="730" y="101" font-size="13" fill="#64748b">точки — возможные варианты ответа</text>
+
+    <!-- Left: vague request -->
+    <rect x="28" y="150" width="210" height="300" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-dasharray="6 5"/>
+    <text x="133" y="181" text-anchor="middle" font-size="16" font-weight="700" fill="#334155">Расплывчатая заявка</text>
+    <text x="133" y="204" text-anchor="middle" font-size="13" fill="#64748b">«Сделай понятно»</text>
+
+    <!-- Many possible answers -->
+    <g fill="#94a3b8">
+      <circle cx="62" cy="242" r="5"/>
+      <circle cx="96" cy="232" r="4"/>
+      <circle cx="132" cy="248" r="5"/>
+      <circle cx="172" cy="236" r="4"/>
+      <circle cx="202" cy="254" r="5"/>
+      <circle cx="76" cy="286" r="4"/>
+      <circle cx="116" cy="296" r="5"/>
+      <circle cx="154" cy="278" r="4"/>
+      <circle cx="190" cy="300" r="5"/>
+      <circle cx="58" cy="334" r="5"/>
+      <circle cx="98" cy="344" r="4"/>
+      <circle cx="138" cy="326" r="5"/>
+      <circle cx="178" cy="350" r="4"/>
+      <circle cx="210" cy="330" r="4"/>
+      <circle cx="72" cy="388" r="4"/>
+      <circle cx="112" cy="400" r="5"/>
+      <circle cx="152" cy="382" r="4"/>
+      <circle cx="194" cy="404" r="5"/>
+    </g>
+    <text x="133" y="434" text-anchor="middle" font-size="12" fill="#64748b">много разных ответов</text>
+
+    <!-- Flow line -->
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8"/>
+      </marker>
+    </defs>
+    <line x1="238" y1="300" x2="778" y2="300" stroke="#94a3b8" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <!-- Filter labels -->
+    <g text-anchor="middle">
+      <text x="314" y="165" font-size="15" font-weight="700" fill="#0c4a6e">1. Цель</text>
+      <text x="314" y="186" font-size="12" fill="#0369a1">что получить?</text>
+
+      <text x="434" y="165" font-size="15" font-weight="700" fill="#0c4a6e">2. Входы</text>
+      <text x="434" y="186" font-size="12" fill="#0369a1">на что опираться?</text>
+
+      <text x="554" y="165" font-size="15" font-weight="700" fill="#0c4a6e">3. Границы</text>
+      <text x="554" y="186" font-size="12" fill="#0369a1">что не менять?</text>
+
+      <text x="674" y="165" font-size="15" font-weight="700" fill="#0c4a6e">4. Критерии</text>
+      <text x="674" y="186" font-size="12" fill="#0369a1">когда готово?</text>
+    </g>
+
+    <!-- Filters -->
+    <g>
+      <rect x="270" y="210" width="88" height="180" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+      <g stroke="#7dd3fc" stroke-width="1" opacity="0.85">
+        <line x1="288" y1="220" x2="288" y2="380"/>
+        <line x1="306" y1="220" x2="306" y2="380"/>
+        <line x1="324" y1="220" x2="324" y2="380"/>
+        <line x1="342" y1="220" x2="342" y2="380"/>
+        <line x1="280" y1="240" x2="348" y2="240"/>
+        <line x1="280" y1="270" x2="348" y2="270"/>
+        <line x1="280" y1="300" x2="348" y2="300"/>
+        <line x1="280" y1="330" x2="348" y2="330"/>
+        <line x1="280" y1="360" x2="348" y2="360"/>
+      </g>
+    </g>
+    <g>
+      <rect x="390" y="210" width="88" height="180" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+      <g stroke="#7dd3fc" stroke-width="1" opacity="0.85">
+        <line x1="408" y1="220" x2="408" y2="380"/>
+        <line x1="426" y1="220" x2="426" y2="380"/>
+        <line x1="444" y1="220" x2="444" y2="380"/>
+        <line x1="462" y1="220" x2="462" y2="380"/>
+        <line x1="400" y1="240" x2="468" y2="240"/>
+        <line x1="400" y1="270" x2="468" y2="270"/>
+        <line x1="400" y1="300" x2="468" y2="300"/>
+        <line x1="400" y1="330" x2="468" y2="330"/>
+        <line x1="400" y1="360" x2="468" y2="360"/>
+      </g>
+    </g>
+    <g>
+      <rect x="510" y="210" width="88" height="180" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+      <g stroke="#7dd3fc" stroke-width="1" opacity="0.85">
+        <line x1="528" y1="220" x2="528" y2="380"/>
+        <line x1="546" y1="220" x2="546" y2="380"/>
+        <line x1="564" y1="220" x2="564" y2="380"/>
+        <line x1="582" y1="220" x2="582" y2="380"/>
+        <line x1="520" y1="240" x2="588" y2="240"/>
+        <line x1="520" y1="270" x2="588" y2="270"/>
+        <line x1="520" y1="300" x2="588" y2="300"/>
+        <line x1="520" y1="330" x2="588" y2="330"/>
+        <line x1="520" y1="360" x2="588" y2="360"/>
+      </g>
+    </g>
+    <g>
+      <rect x="630" y="210" width="88" height="180" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="2"/>
+      <g stroke="#7dd3fc" stroke-width="1" opacity="0.85">
+        <line x1="648" y1="220" x2="648" y2="380"/>
+        <line x1="666" y1="220" x2="666" y2="380"/>
+        <line x1="684" y1="220" x2="684" y2="380"/>
+        <line x1="702" y1="220" x2="702" y2="380"/>
+        <line x1="640" y1="240" x2="708" y2="240"/>
+        <line x1="640" y1="270" x2="708" y2="270"/>
+        <line x1="640" y1="300" x2="708" y2="300"/>
+        <line x1="640" y1="330" x2="708" y2="330"/>
+        <line x1="640" y1="360" x2="708" y2="360"/>
+      </g>
+    </g>
+
+    <!-- Remaining variants -->
+    <g fill="#64748b">
+      <circle cx="250" cy="282" r="4"/>
+      <circle cx="260" cy="300" r="4"/>
+      <circle cx="250" cy="318" r="4"/>
+      <circle cx="262" cy="336" r="3"/>
+      <circle cx="250" cy="354" r="3"/>
+      <circle cx="260" cy="370" r="3"/>
+    </g>
+    <g fill="#64748b">
+      <circle cx="370" cy="288" r="4"/>
+      <circle cx="380" cy="306" r="4"/>
+      <circle cx="370" cy="324" r="3"/>
+      <circle cx="380" cy="342" r="3"/>
+    </g>
+    <g fill="#64748b">
+      <circle cx="490" cy="294" r="4"/>
+      <circle cx="500" cy="312" r="3"/>
+    </g>
+    <circle cx="742" cy="300" r="7" fill="#15803d"/>
+
+    <!-- Right: result -->
+    <rect x="780" y="242" width="172" height="116" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="866" y="278" text-anchor="middle" font-size="16" font-weight="700" fill="#14532d">Проверяемый</text>
+    <text x="866" y="300" text-anchor="middle" font-size="16" font-weight="700" fill="#14532d">результат</text>
+    <text x="866" y="326" text-anchor="middle" font-size="12" fill="#166534">можно принять</text>
+    <text x="866" y="344" text-anchor="middle" font-size="12" fill="#166534">или отклонить</text>
+
+    <!-- Bottom band -->
+    <rect x="28" y="495" width="924" height="88" rx="12" fill="#fffbeb" stroke="#f59e0b"/>
+    <text x="52" y="526" font-size="15" font-weight="700" fill="#78350f">Пропущенное поле — это решение, которое агент примет за вас.</text>
+    <text x="52" y="554" font-size="14" fill="#92400e">что сделать  ·  на что опираться  ·  что не менять  ·  когда готово</text>
+    <text x="52" y="574" font-size="12" fill="#a16207">Четыре поля не гарантируют правильный ответ, но делают его проверяемым.</text>
+  </g>
+</svg>

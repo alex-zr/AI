@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="l07Title l07Desc">
+  <title id="l07Title">L07: Декомпозиция, шов передачи и ранняя остановка после первого шага</title>
+  <desc id="l07Desc">Схема показывает корректный шов передачи между шагом 1 и шагом 2, разрыв шва со скрытым циклом 2-3-2, а также сравнение ранней остановки после шага 1 с выполнением всего плана без промежуточной приёмки.</desc>
+
+  <rect width="1200" height="760" fill="#fbfbfd"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="45" y="44" font-size="26" font-weight="700" fill="#0f172a">L07. Декомпозиция: граф без циклов, шов передачи и стоп-правило</text>
+    <text x="45" y="72" font-size="15" fill="#475569">Учебная схема. Показывает, почему проверяется совпадение «выход шага 1 = вход шага 2» и зачем останавливаться после шага 1.</text>
+
+    <!-- Upper lane: Valid DAG and Seam -->
+    <rect x="45" y="96" width="1110" height="205" rx="12" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+    <text x="65" y="126" font-size="18" font-weight="700" fill="#15803d">1. Рабочий план (DAG без циклов) и сходящийся шов передачи</text>
+
+    <rect x="65" y="146" width="230" height="130" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="180" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#14532d">Шаг 1 (выполняем сейчас)</text>
+    <text x="80" y="198" font-size="13" fill="#1e293b">Вход: brief.md</text>
+    <text x="80" y="220" font-size="13" font-weight="700" fill="#14532d">Выход 1: таблица</text>
+    <text x="80" y="240" font-size="12" fill="#334155">• 2 результата ученика</text>
+    <text x="80" y="258" font-size="12" fill="#334155">• каркас 4 разделов + лимит</text>
+
+    <rect x="335" y="146" width="230" height="130" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="450" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#0369a1">Шов 1 → 2 и Стоп-правило</text>
+    <text x="350" y="198" font-size="13" fill="#0f172a">✓ Выход 1 существует</text>
+    <text x="350" y="218" font-size="13" fill="#0f172a">✓ Тип и поля = Вход шага 2</text>
+    <text x="350" y="238" font-size="13" font-weight="700" fill="#b45309">СТОП: шаги 2–4 сегодня</text>
+    <text x="350" y="256" font-size="13" font-weight="700" fill="#b45309">не выполняются!</text>
+
+    <rect x="605" y="146" width="240" height="130" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="725" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">Шаг 2 (в плане, не начат)</text>
+    <text x="620" y="198" font-size="13" fill="#334155">Вход: Выход 1 + brief.md</text>
+    <text x="620" y="220" font-size="13" fill="#334155">Выход: draft.md (4 раздела,</text>
+    <text x="620" y="240" font-size="13" fill="#334155">1 код-блок, ≤ 180 слов)</text>
+    <text x="620" y="260" font-size="12" fill="#64748b">Зависит от: Шаг 1</text>
+
+    <rect x="885" y="146" width="250" height="130" rx="10" fill="#ffffff" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <text x="1010" y="172" text-anchor="middle" font-size="15" font-weight="700" fill="#475569">Шаги 3–4 (в плане)</text>
+    <text x="900" y="198" font-size="13" fill="#334155">Шаг 3: запуск кода и сверка</text>
+    <text x="900" y="218" font-size="13" fill="#334155">вывода → verification.md</text>
+    <text x="900" y="242" font-size="13" fill="#334155">Шаг 4: сборка card.md</text>
+    <text x="900" y="260" font-size="12" fill="#64748b">Зависят от: 2 → 3 → 4</text>
+
+    <!-- Middle lane: Broken Seam and Hidden Cycle -->
+    <rect x="45" y="322" width="1110" height="195" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+    <text x="65" y="352" font-size="18" font-weight="700" fill="#991b1b">2. Дефектный план: разрыв шва 1 → 2 и скрытый цикл 2 ↔ 3</text>
+
+    <rect x="65" y="372" width="240" height="120" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="185" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#991b1b">Шаг 1 выдаёт мало</text>
+    <text x="80" y="424" font-size="13" fill="#7f1d1d">Выход 1: только «два</text>
+    <text x="80" y="444" font-size="13" fill="#7f1d1d">результата» (примера нет)</text>
+
+    <rect x="355" y="372" width="320" height="120" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+    <text x="515" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#9a3412">Разрыв шва + Скрытый цикл!</text>
+    <text x="370" y="424" font-size="13" fill="#7c2d12">Шаг 2 требует на вход «готовый</text>
+    <text x="370" y="444" font-size="13" fill="#7c2d12">проверенный пример», но проверка</text>
+    <text x="370" y="464" font-size="13" fill="#7c2d12">примера стоит только в Шаге 3!</text>
+    <text x="370" y="484" font-size="12" font-weight="700" fill="#dc2626">Цикл: Шаг 2 ждёт Шаг 3, а Шаг 3 ждёт Шаг 2</text>
+
+    <rect x="725" y="372" width="410" height="120" rx="10" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="930" y="398" text-anchor="middle" font-size="15" font-weight="700" fill="#991b1b">Три способа исправить разрыв:</text>
+    <text x="740" y="424" font-size="13" fill="#1e293b">(A) Расширить выход Шага 1 (добавить черновой пример)</text>
+    <text x="740" y="448" font-size="13" fill="#1e293b">(B) Изменить вход Шага 2 (пример пишется в 2, проверяется в 3)</text>
+    <text x="740" y="472" font-size="13" fill="#1e293b">(C) Вставить отдельный шаг подготовки примера между 1 и 2</text>
+
+    <!-- Bottom lane: Why Stop-rule saves rework (Educational chart) -->
+    <rect x="45" y="538" width="1110" height="185" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="65" y="568" font-size="17" font-weight="700" fill="#0f172a">Учебная модель: объём переделки при ошибке в первом шаге</text>
+    <text x="65" y="590" font-size="13" fill="#64748b">Условное сравнение: что происходит, если в Шаге 1 неверно выбраны цели упражнений.</text>
+
+    <text x="65" y="632" font-size="14" font-weight="700" fill="#15803d">Со стоп-правилом после Шага 1:</text>
+    <rect x="340" y="615" width="140" height="24" rx="4" fill="#22c55e"/>
+    <text x="492" y="632" font-size="13" fill="#166534">Исправляем только таблицу Шага 1 (1 артефакт, ~5 минут)</text>
+
+    <text x="65" y="676" font-size="14" font-weight="700" fill="#b91c1c">Без стоп-правила (всё сразу):</text>
+    <rect x="340" y="659" width="560" height="24" rx="4" fill="#ef4444"/>
+    <text x="912" y="676" font-size="13" fill="#991b1b">Переписываем Шаги 1, 2, 3 и 4 (весь комплект)</text>
+
+    <text x="65" y="708" font-size="13" fill="#334155">Вывод: выполнение шагов 2–N в L07 — не «бонус от агента», а нарушение границы области.</text>
+  </g>
+</svg>
